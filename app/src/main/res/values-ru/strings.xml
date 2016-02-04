@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Универсальный Поздравитель!</string>
+    <string name="first_header">Выбирите категорию поздравлений:</string>
+    <string name="textValentineDay">День Св. Валентина</string>
+    <string name="textNewYear">Новый Год</string>
+    <string name="text8March">8 Марта</string>
+    <string name="text23February">23 Февраля</string>
+</resources>
