@@ -6,4 +6,6 @@
     <string name="textNewYear">Новый Год</string>
     <string name="text8March">8 Марта</string>
     <string name="text23February">23 Февраля</string>
+    <string name="textDays">дней</string>
+    <string name="textNow">сейчас</string>
 </resources>
