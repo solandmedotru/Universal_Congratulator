@@ -7,4 +7,39 @@
     <string name="text8March">Woman`s day</string>
     <string name="textDays">days</string>
     <string name="textNow">now</string>
+
+    <string name="newYear1">
+        С Новым годом поздравляю\n
+        И от всей души желаю\n
+        Веселиться и смеяться,\n
+        Ни на что не обижаться,\n
+        Жить легко и без забот\n
+        Весь грядущий новый год.\n\n
+
+        Наслаждаться каждым мигом\n
+        И дарить свое тепло,\n
+        Быть всегда на позитиве,\n
+        Чтоб всегда во всём везло!\n\n
+
+        С Новым годом! С новым счастьем!\n
+        Смеха, мира и добра!\n
+        Пусть обходят все ненастья,\n
+        Жизнь одарит вас сполна!\n
+    </string>
+
+    <string name="valentine1">
+        С днем Святого Валентина\n
+        Поздравляем всех влюбленных.\n
+        Пусть любовь будет взаимной,\n
+        Чувств вам нежных, окрыленных.\n\n
+
+        Пусть любовь вас согревает,\n
+        Несет радость и тепло,\n
+        Амур в воздухе летает,\n
+        Дарит счастье и добро!\n
+    </string>
+    <string name="textBtnSendSMS">Send SMS</string>
+    <string name="textBtnNext">Next</string>
+    <string name="textFldEmpty">Empty</string>
+    <string name="textBtnBefore">Before</string>
 </resources>
