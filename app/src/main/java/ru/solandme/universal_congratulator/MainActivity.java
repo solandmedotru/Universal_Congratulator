@@ -30,46 +30,13 @@ public class MainActivity extends AppCompatActivity {
         textDaysForMansDay.setText(getDays(2, 23));
         textDaysForValentine.setText(getDays(2, 17));
         textDaysForWomanDay.setText(getDays(3, 8));
-//        long date = System.currentTimeMillis();
-//        TextView holidayName = (TextView) findViewById(R.id.holidayName);
-//        TextView dayFromHoliday = (TextView) findViewById(R.id.dayFromHoliday);
-//
-//        SimpleDateFormat dataDay = new SimpleDateFormat("dd");
-//        SimpleDateFormat dataMonth = new SimpleDateFormat("MM");
-//        int day = Integer.parseInt(dataDay.format(date));
-//        int month = Integer.parseInt(dataMonth.format(date));
-//
-//        if (month == 12){
-//            holidayName.setText(" Нового года");
-//            dayFromHoliday.setText(Integer.toString(31 - day));
-//        }
-//        if (month <= 02 && day < 17){
-//            holidayName.setText(" дня св.Валентина");
-//            dayFromHoliday.setText(Integer.toString(17 - day));
-//        }
-//        if (month == 02 && (day < 23 && day > 17)){
-//            holidayName.setText(" дня св.Валентина");
-//            dayFromHoliday.setText(Integer.toString(23 - day));
-//        }
-//        if ((month >= 02 && day > 17) && (month <=3 && day < 8)){
-//            holidayName.setText(" 8 Марта");
-//            if((month >= 02 && day > 17)){
-//                dayFromHoliday.setText(Integer.toString(28 - day + 8));
-//            }
-//            if((month <=3 && day < 8)){
-//                dayFromHoliday.setText(Integer.toString(8 - day));
-//            }
-//        }
     }
 
     private String getDays(int month, int day) {
-        Date today = new Date();
-
-        SimpleDateFormat yearFormat = new SimpleDateFormat("yyyy");
-        int year = Integer.parseInt(yearFormat.format(today));
-
+        Calendar todayCalendar = new GregorianCalendar();
+        int year = todayCalendar.get(Calendar.YEAR);
         Calendar calendar = new GregorianCalendar(year, month-1, day);
-        long days = (((calendar.getTimeInMillis() - today.getTime())/1000))/86400;
+        long days = (((calendar.getTimeInMillis() - todayCalendar.getTimeInMillis())/1000))/86400;
 
         if (days > 1) {
             return days + " " + getString(R.string.textDays);

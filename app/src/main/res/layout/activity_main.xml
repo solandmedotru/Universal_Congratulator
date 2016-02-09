@@ -32,7 +32,7 @@
                 android:id="@+id/newYear"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#e3f2fd"
+                android:background="#B2EBF2"
                 android:onClick="onClick">
 
                 <ImageView
@@ -68,7 +68,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#f3e5f5"
+                android:background="#F8BBD0"
                 android:onClick="onClick"
                 android:id="@+id/valentine">
 
@@ -108,7 +108,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#f9fbe7"
+                android:background="#FFF9C4"
                 android:id="@+id/mansDay"
                 android:onClick="onClick">
 
@@ -146,7 +146,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#e8f5e9"
+                android:background="#DCEDC8"
                 android:id="@+id/womansDay"
                 android:onClick="onClick">
 
