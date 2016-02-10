@@ -1,12 +1,12 @@
 package ru.solandme.universal_congratulator;
 
 import android.content.Intent;
+
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -17,10 +17,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        findHolidays();
+        initViews();
     }
 
-    private void findHolidays() {
+    private void initViews() {
         TextView textDaysForNewYear = (TextView) findViewById(R.id.textDaysForNewYear);
         TextView textDaysForMansDay = (TextView) findViewById(R.id.textDaysForMansDay);
         TextView textDaysForValentine = (TextView) findViewById(R.id.textDaysForValentine);
@@ -40,43 +40,50 @@ public class MainActivity extends AppCompatActivity {
 
         if (days > 1) {
             return days + " " + getString(R.string.textDays);
-        } else {
+        } else if (days == 0) {
             return " " + getString(R.string.textNow);
+        } else {
+            return " " + getString(R.string.textFinish);
         }
     }
 
     public void onClick(View view) {
 
-        Intent intent = new Intent(this, TextActivity.class);
+        Intent intent = new Intent(getApplicationContext(), TextActivity.class);
+        Intent intent2 = new Intent(getApplicationContext(), CalendarActivity.class);
 
         if (view.equals(findViewById(R.id.newYear))) {
 //            Toast.makeText(this, "Click to New Year", Toast.LENGTH_SHORT).show();
-            intent.putExtra("text", getTextCongratulate("ny"));
+            intent.putExtra("text", getTextCongratulate("NewYear"));
             startActivity(intent);
         }
         if (view.equals(findViewById(R.id.valentine))) {
 //            Toast.makeText(this, "Click to Valentine", Toast.LENGTH_SHORT).show();
-            intent.putExtra("text", getTextCongratulate("v"));
+            intent.putExtra("text", getTextCongratulate("Valentine"));
             startActivity(intent);
         }
         if (view.equals(findViewById(R.id.womansDay))) {
 //            Toast.makeText(this, "Click to 8 March", Toast.LENGTH_SHORT).show();
-            intent.putExtra("text", getTextCongratulate(""));
+            intent.putExtra("text", getTextCongratulate("WomanDay"));
             startActivity(intent);
         }
         if (view.equals(findViewById(R.id.mansDay))) {
 //            Toast.makeText(this, "Click to 23 February", Toast.LENGTH_SHORT).show();
-            intent.putExtra("text", getTextCongratulate(""));
+            intent.putExtra("text", getTextCongratulate("MansDay"));
             startActivity(intent);
+        }
+        if (view.equals(findViewById(R.id.btnHolidaysCalendar))) {
+            startActivity(intent2);
         }
     }
 
     @NonNull
     private String getTextCongratulate(String holiday) {
+        //TODO реализовать работу с базой данных SQLite
         switch (holiday) {
-            case "ny":
+            case "NewYear":
                 return getString(R.string.newYear1);
-            case "v":
+            case "Valentine":
                 return getString(R.string.valentine1);
             default:
                 return getString(R.string.newYear1);

@@ -12,4 +12,6 @@
     <string name="textBtnSendSMS">Отправить по СМС</string>
     <string name="textFldEmpty">Пусто</string>
     <string name="textBtnBefore">Назад</string>
+    <string name="textFinish">прошел</string>
+    <string name="btnTextHolidayCalendar">Календарь праздников</string>
 </resources>

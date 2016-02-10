@@ -182,4 +182,19 @@
             </RelativeLayout>
         </LinearLayout>
     </ScrollView>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btnTextHolidayCalendar"
+        android:id="@+id/btnHolidaysCalendar"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/scrollView"
+        android:layout_alignEnd="@+id/scrollView"
+        android:layout_marginRight="40dp"
+        android:layout_marginEnd="39dp"
+        android:layout_marginBottom="40dp"
+        android:background="#9fa8da"
+        android:padding="8dp"
+        android:onClick="onClick" />
 </RelativeLayout>
