@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         int days = (int) (((calendar.getTimeInMillis() - todayCalendar.getTimeInMillis()) / 1000)) / 86400;
 
         if (days > 1) {
-            return days + " " + getResources().getQuantityString(R.plurals.days, days);
+            return getResources().getQuantityString(R.plurals.days, days, days);
         } else if (days == 0) {
             return " " + getString(R.string.textNow);
         } else {

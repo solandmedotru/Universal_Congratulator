@@ -15,9 +15,9 @@
     <string name="btnTextHolidayCalendar">Holidays Calendar</string>
 
     <plurals name="days">
-        <item quantity="one">day</item>
-        <item quantity="few">days</item>
-        <item quantity="many">days</item>
+        <item quantity="one">%d day</item>
+        <item quantity="few">%d days</item>
+        <item quantity="many">%d days</item>
     </plurals>
 
     <string-array name="newYear">

@@ -16,9 +16,9 @@
     <string name="btnTextHolidayCalendar">Календарь праздников</string>
 
     <plurals name="days">
-        <item quantity="one">день</item>
-        <item quantity="few">дня</item>
-        <item quantity="many">дней</item>
+        <item quantity="one">%d день</item>
+        <item quantity="few">%d дня</item>
+        <item quantity="many">%d дней</item>
     </plurals>
 
     <string-array name="newYear">
