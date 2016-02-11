@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     public final static String EXTRA_MESSAGE = "ru.solandme.universal_congratulator.MESSAGE";
@@ -80,13 +81,20 @@ public class MainActivity extends AppCompatActivity {
     @NonNull
     private String getTextCongratulate(String holiday) {
         //TODO реализовать работу с базой данных SQLite
+        String[] strings;
         switch (holiday) {
             case "NewYear":
-                return getString(R.string.newYear1);
+                strings = getResources().getStringArray(R.array.newYear);
+                return getRndCongratulat(strings);
             case "Valentine":
-                return getString(R.string.valentine1);
+                strings = getResources().getStringArray(R.array.valentine);
+                return getRndCongratulat(strings);
             default:
-                return getString(R.string.newYear1);
+                return "";
         }
+    }
+
+    private String getRndCongratulat(String[] strings) {
+        return strings[new Random().nextInt(strings.length)];
     }
 }
