@@ -37,10 +37,10 @@ public class MainActivity extends AppCompatActivity {
         Calendar todayCalendar = new GregorianCalendar();
         int year = todayCalendar.get(Calendar.YEAR);
         Calendar calendar = new GregorianCalendar(year, month - 1, day);
-        long days = (((calendar.getTimeInMillis() - todayCalendar.getTimeInMillis()) / 1000)) / 86400;
+        int days = (int) (((calendar.getTimeInMillis() - todayCalendar.getTimeInMillis()) / 1000)) / 86400;
 
         if (days > 1) {
-            return days + " " + getString(R.string.textDays);
+            return days + " " + getResources().getQuantityString(R.plurals.days, days);
         } else if (days == 0) {
             return " " + getString(R.string.textNow);
         } else {
@@ -81,20 +81,20 @@ public class MainActivity extends AppCompatActivity {
     @NonNull
     private String getTextCongratulate(String holiday) {
         //TODO реализовать работу с базой данных SQLite
-        String[] strings;
+        String[] congratulates;
         switch (holiday) {
             case "NewYear":
-                strings = getResources().getStringArray(R.array.newYear);
-                return getRndCongratulat(strings);
+                congratulates = getResources().getStringArray(R.array.newYear);
+                return getRndCongratulate(congratulates);
             case "Valentine":
-                strings = getResources().getStringArray(R.array.valentine);
-                return getRndCongratulat(strings);
+                congratulates = getResources().getStringArray(R.array.valentine);
+                return getRndCongratulate(congratulates);
             default:
                 return "";
         }
     }
 
-    private String getRndCongratulat(String[] strings) {
+    private String getRndCongratulate(String[] strings) {
         return strings[new Random().nextInt(strings.length)];
     }
 }
