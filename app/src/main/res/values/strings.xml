@@ -22,41 +22,22 @@
 
     <string-array name="newYear">
         <item>
-            С Новым годом поздравляю\n
-            И от всей души желаю\n
-            Веселиться и смеяться,\n
-            Ни на что не обижаться,\n
-            Жить легко и без забот\n
-            Весь грядущий новый год.\n\n
-
-            Наслаждаться каждым мигом\n
-            И дарить свое тепло,\n
-            Быть всегда на позитиве,\n
-            Чтоб всегда во всём везло!\n\n
-
-            С Новым годом! С новым счастьем!\n
-            Смеха, мира и добра!\n
-            Пусть обходят все ненастья,\n
-            Жизнь одарит вас сполна!\n
+            Welcome New Year…\n
+            We look forward to you\n
+            A year of wonderful happiness\n
+            A year of good health\n
+            A year of great success\n
+            A year of incredibly good luck\n
+            A year of continuous fun\n
+            A year of world peace\n
         </item>
         <item>
-            Всего вам хорошего, самого лучшего,\n
-            Удачи во всём и счастливого случая.\n
-            Пусть будут приятными ваши заботы,\n
-            Хорошие чувства приносит работа.\n
-            Пускай не несет Новый год огорчения,\n
-            А только отличного вам настроения!\n
-        </item>
-        <item>
-            Привет! И сразу поздравляю,\n
-            Всего того тебе желаю,\n
-            Что пожелаешь ты другим,\n
-            Чтоб Новый год счастливым был!\n\n
-
-            Удача чтоб не проходила мимо,\n
-            Здоровье крепким было, не шалило,\n
-            С деньгами тоже не было проблем,\n
-            Ну а проблем чтоб не было совсем!\n
+            Having You Means That\n
+            I Have Someone To Disturb\n
+            And Call In Time Of Need.\n
+            As We Watch The Curtains Of This Year Fall,\n
+            It Means That Another Year Sets\n
+            In Giving Me Another Chance To Disturb You More.\n
         </item>
     </string-array>
     <string-array name="valentine">
