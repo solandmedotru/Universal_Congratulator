@@ -11,12 +11,14 @@ public class TextActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_text);
         initViews();
-
     }
 
     private void initViews() {
-        TextView textCongratulate = (TextView) findViewById(R.id.textCongratulate);
-        String text = getIntent().getStringExtra("text");
-        textCongratulate.setText(text);
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            String text = extras.getString(MainActivity.EXTRA_MESSAGE);
+            TextView textCongratulate = (TextView) findViewById(R.id.textCongratulate);
+            textCongratulate.setText(text);
+        }
     }
 }

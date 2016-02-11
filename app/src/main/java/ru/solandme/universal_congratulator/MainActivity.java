@@ -12,7 +12,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 public class MainActivity extends AppCompatActivity {
-
+    public final static String EXTRA_MESSAGE = "ru.solandme.universal_congratulator.MESSAGE";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,22 +54,22 @@ public class MainActivity extends AppCompatActivity {
 
         if (view.equals(findViewById(R.id.newYear))) {
 //            Toast.makeText(this, "Click to New Year", Toast.LENGTH_SHORT).show();
-            intent.putExtra("text", getTextCongratulate("NewYear"));
+            intent.putExtra(EXTRA_MESSAGE, getTextCongratulate("NewYear"));
             startActivity(intent);
         }
         if (view.equals(findViewById(R.id.valentine))) {
 //            Toast.makeText(this, "Click to Valentine", Toast.LENGTH_SHORT).show();
-            intent.putExtra("text", getTextCongratulate("Valentine"));
+            intent.putExtra(EXTRA_MESSAGE, getTextCongratulate("Valentine"));
             startActivity(intent);
         }
         if (view.equals(findViewById(R.id.womansDay))) {
 //            Toast.makeText(this, "Click to 8 March", Toast.LENGTH_SHORT).show();
-            intent.putExtra("text", getTextCongratulate("WomanDay"));
+            intent.putExtra(EXTRA_MESSAGE, getTextCongratulate("WomanDay"));
             startActivity(intent);
         }
         if (view.equals(findViewById(R.id.mansDay))) {
 //            Toast.makeText(this, "Click to 23 February", Toast.LENGTH_SHORT).show();
-            intent.putExtra("text", getTextCongratulate("MansDay"));
+            intent.putExtra(EXTRA_MESSAGE, getTextCongratulate("MansDay"));
             startActivity(intent);
         }
         if (view.equals(findViewById(R.id.btnHolidaysCalendar))) {
