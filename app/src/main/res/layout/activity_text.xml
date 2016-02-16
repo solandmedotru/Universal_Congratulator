@@ -17,7 +17,6 @@
         android:id="@+id/textCongratulate"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="61dp"
         android:textSize="30sp"
         android:textStyle="italic"
         android:theme="@style/AppTheme" />
@@ -30,7 +29,8 @@
         android:id="@+id/btnSendSMS"
         android:layout_below="@+id/textCongratulate"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="5dp" />
+        android:layout_marginTop="5dp"
+        android:textSize="10dp" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -40,7 +40,8 @@
         android:id="@+id/btnNext"
         android:layout_alignTop="@+id/btnSendSMS"
         android:layout_toRightOf="@+id/btnSendSMS"
-        android:layout_toEndOf="@+id/btnSendSMS" />
+        android:layout_toEndOf="@+id/btnSendSMS"
+        android:textSize="10dp" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -50,5 +51,6 @@
         android:id="@+id/btnBefore"
         android:layout_alignTop="@+id/btnSendSMS"
         android:layout_toLeftOf="@+id/btnSendSMS"
-        android:layout_toStartOf="@+id/btnSendSMS" />
+        android:layout_toStartOf="@+id/btnSendSMS"
+        android:textSize="10dp" />
 </RelativeLayout>

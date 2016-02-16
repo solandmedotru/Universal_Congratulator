@@ -12,7 +12,8 @@
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:foregroundGravity="fill">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -37,9 +38,10 @@
 
                 <ImageView
                     android:id="@+id/imageView2"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
-                    android:src="@drawable/ic_december" />
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/ic_december"
+                    android:scaleType="fitCenter" />
 
                 <TextView
                     android:id="@+id/textNewYear"
@@ -74,10 +76,11 @@
 
                 <ImageView
                     android:id="@+id/imageView"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_gravity="left|center"
-                    android:src="@drawable/ic_february" />
+                    android:src="@drawable/ic_february"
+                    android:scaleType="fitCenter" />
 
                 <TextView
                     android:id="@+id/textValentineDay"
@@ -114,10 +117,11 @@
 
                 <ImageView
                     android:id="@+id/imageView3"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_gravity="left|center"
-                    android:src="@drawable/ic_23february" />
+                    android:src="@drawable/ic_23february"
+                    android:scaleType="fitCenter" />
 
                 <TextView
                     android:id="@+id/text23February"
@@ -152,10 +156,11 @@
 
                 <ImageView
                     android:id="@+id/imageView4"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_gravity="left|center"
-                    android:src="@drawable/ic_8march" />
+                    android:src="@drawable/ic_8march"
+                    android:scaleType="fitCenter" />
 
                 <TextView
                     android:id="@+id/text8March"
@@ -180,21 +185,20 @@
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textSize="@dimen/txtSize" />
             </RelativeLayout>
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:id="@+id/btnHolidaysCalendar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#9fa8da"
+                android:onClick="onClick"
+                android:text="@string/btnTextHolidayCalendar"
+                android:padding="6dp"
+                android:layout_gravity="right"
+                android:layout_margin="10dp"
+                android:textSize="10dp" />
         </LinearLayout>
     </ScrollView>
 
-    <Button
-        android:id="@+id/btnHolidaysCalendar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/scrollView"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/scrollView"
-        android:layout_marginBottom="40dp"
-        android:layout_marginEnd="39dp"
-        android:layout_marginRight="40dp"
-        android:background="#9fa8da"
-        android:onClick="onClick"
-        android:padding="8dp"
-        android:text="@string/btnTextHolidayCalendar" />
 </RelativeLayout>

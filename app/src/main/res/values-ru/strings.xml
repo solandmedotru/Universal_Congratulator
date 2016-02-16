@@ -7,7 +7,7 @@
     <string name="text8March">8 Марта</string>
     <string name="text23February">23 Февраля</string>
     <string name="textDays">дней</string>
-    <string name="textNow">сейчас</string>
+    <string name="textNow">сегодня</string>
     <string name="textBtnNext">Далее</string>
     <string name="textBtnSendSMS">Отправить по СМС</string>
     <string name="textFldEmpty">Пусто</string>

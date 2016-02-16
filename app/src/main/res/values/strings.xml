@@ -11,7 +11,7 @@
     <string name="textBtnNext">Next</string>
     <string name="textFldEmpty">Empty</string>
     <string name="textBtnBefore">Before</string>
-    <string name="textFinish">finish</string>
+    <string name="textFinish">is done</string>
     <string name="btnTextHolidayCalendar">Holidays Calendar</string>
 
     <plurals name="days">

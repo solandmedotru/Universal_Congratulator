@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
         textDaysForNewYear.setText(getDays(12, 31));
         textDaysForMansDay.setText(getDays(2, 23));
-        textDaysForValentine.setText(getDays(2, 17));
+        textDaysForValentine.setText(getDays(2, 14));
         textDaysForWomanDay.setText(getDays(3, 8));
     }
 
@@ -51,30 +51,28 @@ public class MainActivity extends AppCompatActivity {
     public void onClick(View view) {
 
         Intent intent = new Intent(getApplicationContext(), TextActivity.class);
-        Intent intent2 = new Intent(getApplicationContext(), CalendarActivity.class);
 
-        if (view.equals(findViewById(R.id.newYear))) {
-//            Toast.makeText(this, "Click to New Year", Toast.LENGTH_SHORT).show();
-            intent.putExtra(EXTRA_MESSAGE, getTextCongratulate("NewYear"));
-            startActivity(intent);
-        }
-        if (view.equals(findViewById(R.id.valentine))) {
-//            Toast.makeText(this, "Click to Valentine", Toast.LENGTH_SHORT).show();
-            intent.putExtra(EXTRA_MESSAGE, getTextCongratulate("Valentine"));
-            startActivity(intent);
-        }
-        if (view.equals(findViewById(R.id.womansDay))) {
-//            Toast.makeText(this, "Click to 8 March", Toast.LENGTH_SHORT).show();
-            intent.putExtra(EXTRA_MESSAGE, getTextCongratulate("WomanDay"));
-            startActivity(intent);
-        }
-        if (view.equals(findViewById(R.id.mansDay))) {
-//            Toast.makeText(this, "Click to 23 February", Toast.LENGTH_SHORT).show();
-            intent.putExtra(EXTRA_MESSAGE, getTextCongratulate("MansDay"));
-            startActivity(intent);
-        }
-        if (view.equals(findViewById(R.id.btnHolidaysCalendar))) {
-            startActivity(intent2);
+
+        switch (view.getId()){
+            case R.id.newYear:
+                intent.putExtra(EXTRA_MESSAGE, getTextCongratulate("NewYear"));
+                startActivity(intent);
+                break;
+            case R.id.valentine:
+                intent.putExtra(EXTRA_MESSAGE, getTextCongratulate("Valentine"));
+                startActivity(intent);
+                break;
+            case R.id.womansDay:
+                intent.putExtra(EXTRA_MESSAGE, getTextCongratulate("WomanDay"));
+                startActivity(intent);
+                break;
+            case R.id.mansDay:
+                intent.putExtra(EXTRA_MESSAGE, getTextCongratulate("MansDay"));
+                startActivity(intent);
+                break;
+            case R.id.btnHolidaysCalendar:
+                Intent intent2 = new Intent(getApplicationContext(), CalendarActivity.class);
+                startActivity(intent2);
         }
     }
 
