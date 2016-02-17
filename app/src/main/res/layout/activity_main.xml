@@ -27,7 +27,7 @@
                 android:layout_height="match_parent"
                 android:padding="10dp"
                 android:text="@string/first_header"
-                android:textSize="@dimen/txtSize" />
+                android:textSize="15sp" />
 
             <RelativeLayout
                 android:id="@+id/newYear"
@@ -43,28 +43,31 @@
                     android:src="@drawable/ic_december"
                     android:scaleType="fitCenter" />
 
-                <TextView
-                    android:id="@+id/textNewYear"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_centerVertical="true"
-                    android:layout_toEndOf="@+id/imageView2"
                     android:layout_toRightOf="@+id/imageView2"
-                    android:text="@string/textNewYear"
-                    android:textSize="@dimen/txtSize"
-                    android:textStyle="normal|italic" />
+                    android:layout_toEndOf="@+id/imageView2"
+                    android:gravity="left|center"
+                    android:layout_marginLeft="10dp">
 
-                <TextView
-                    android:id="@+id/textDaysForNewYear"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="40dp"
-                    android:layout_toEndOf="@+id/textNewYear"
-                    android:layout_toRightOf="@+id/textNewYear"
-                    android:text="@string/textDays"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textSize="@dimen/txtSize" />
+                    <TextView
+                        android:id="@+id/textNewYear"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/textNewYear"
+                        android:textSize="@dimen/txtSize"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:id="@+id/textDaysForNewYear"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/textDays"
+                        android:textSize="15sp" />
+                </LinearLayout>
             </RelativeLayout>
 
             <RelativeLayout
@@ -82,29 +85,31 @@
                     android:src="@drawable/ic_february"
                     android:scaleType="fitCenter" />
 
-                <TextView
-                    android:id="@+id/textValentineDay"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_centerVertical="true"
-                    android:layout_gravity="center|right"
-                    android:layout_toEndOf="@+id/imageView"
                     android:layout_toRightOf="@+id/imageView"
-                    android:text="@string/textValentineDay"
-                    android:textSize="@dimen/txtSize"
-                    android:textStyle="italic" />
+                    android:layout_toEndOf="@+id/imageView"
+                    android:gravity="left"
+                    android:layout_marginLeft="10dp">
 
-                <TextView
-                    android:id="@+id/textDaysForValentine"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="40dp"
-                    android:layout_toEndOf="@+id/textValentineDay"
-                    android:layout_toRightOf="@+id/textValentineDay"
-                    android:text="@string/textDays"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textSize="@dimen/txtSize" />
+                    <TextView
+                        android:id="@+id/textValentineDay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/textValentineDay"
+                        android:textSize="@dimen/txtSize"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:id="@+id/textDaysForValentine"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/textDays"
+                        android:textSize="15sp" />
+                </LinearLayout>
 
             </RelativeLayout>
 
@@ -123,28 +128,31 @@
                     android:src="@drawable/ic_23february"
                     android:scaleType="fitCenter" />
 
-                <TextView
-                    android:id="@+id/text23February"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="left"
                     android:layout_centerVertical="true"
-                    android:layout_toEndOf="@+id/imageView3"
                     android:layout_toRightOf="@+id/imageView3"
-                    android:text="@string/text23February"
-                    android:textSize="@dimen/txtSize"
-                    android:textStyle="italic" />
+                    android:layout_toEndOf="@+id/imageView3"
+                    android:layout_marginLeft="10dp">
 
-                <TextView
-                    android:id="@+id/textDaysForMansDay"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="40dp"
-                    android:layout_toEndOf="@+id/text23February"
-                    android:layout_toRightOf="@+id/text23February"
-                    android:text="@string/textDays"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textSize="@dimen/txtSize" />
+                    <TextView
+                        android:id="@+id/text23February"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/text23February"
+                        android:textSize="@dimen/txtSize"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:id="@+id/textDaysForMansDay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/textDays"
+                        android:textSize="15sp" />
+                </LinearLayout>
             </RelativeLayout>
 
             <RelativeLayout
@@ -162,28 +170,31 @@
                     android:src="@drawable/ic_8march"
                     android:scaleType="fitCenter" />
 
-                <TextView
-                    android:id="@+id/text8March"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="left"
                     android:layout_centerVertical="true"
-                    android:layout_toEndOf="@+id/imageView4"
                     android:layout_toRightOf="@+id/imageView4"
-                    android:text="@string/text8March"
-                    android:textSize="@dimen/txtSize"
-                    android:textStyle="italic" />
+                    android:layout_toEndOf="@+id/imageView4"
+                    android:layout_marginLeft="10dp">
 
-                <TextView
-                    android:id="@+id/textDaysForWomanDay"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="40dp"
-                    android:layout_toEndOf="@+id/text8March"
-                    android:layout_toRightOf="@+id/text8March"
-                    android:text="@string/textDays"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textSize="@dimen/txtSize" />
+                    <TextView
+                        android:id="@+id/text8March"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/text8March"
+                        android:textSize="@dimen/txtSize"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:id="@+id/textDaysForWomanDay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/textDays"
+                        android:textSize="15sp" />
+                </LinearLayout>
             </RelativeLayout>
 
             <Button
@@ -197,7 +208,7 @@
                 android:padding="6dp"
                 android:layout_gravity="right"
                 android:layout_margin="10dp"
-                android:textSize="10dp" />
+                android:textSize="10sp" />
         </LinearLayout>
     </ScrollView>
 
