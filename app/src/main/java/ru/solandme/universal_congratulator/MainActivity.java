@@ -17,6 +17,7 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     public final static String EXTRA_MESSAGE = "ru.solandme.universal_congratulator.MESSAGE";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,14 +33,14 @@ public class MainActivity extends AppCompatActivity {
 
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        switch(id){
-            case R.id.action_settings :
+        switch (id) {
+            case R.id.action_settings:
                 //TODO добавить настройки приложения
-                Toast.makeText(getApplicationContext(),item.getTitle(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), item.getTitle(), Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.about_app:
                 //TODO добавить описание приложения
-                Toast.makeText(getApplicationContext(),item.getTitle(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), item.getTitle(), Toast.LENGTH_SHORT).show();
                 return true;
         }
         return super.onOptionsItemSelected(item);
@@ -60,11 +61,14 @@ public class MainActivity extends AppCompatActivity {
     private String getDays(int month, int day) {
         Calendar todayCalendar = new GregorianCalendar();
         int year = todayCalendar.get(Calendar.YEAR);
+        int daysInYear = todayCalendar.getActualMaximum(Calendar.DAY_OF_YEAR); //максимум дней в этом году
         Calendar calendar = new GregorianCalendar(year, month - 1, day);
-        int days = (int) (((calendar.getTimeInMillis() - todayCalendar.getTimeInMillis()) / 1000)) / 86400;
+        int days = (int) ((calendar.getTimeInMillis() - todayCalendar.getTimeInMillis()) / 1000) / 86400;
 
         if (days > 1) {
             return getResources().getQuantityString(R.plurals.days, days, days);
+        } else if (days < 0) {
+            return getResources().getQuantityString(R.plurals.days, daysInYear + days, daysInYear + days);
         } else if (days == 0) {
             return " " + getString(R.string.textNow);
         } else {
@@ -77,7 +81,11 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), TextActivity.class);
 
 
-        switch (view.getId()){
+        switch (view.getId()) {
+            case R.id.birthday:
+                intent.putExtra(EXTRA_MESSAGE, getTextCongratulate("Birthday"));
+                startActivity(intent);
+                break;
             case R.id.newYear:
                 intent.putExtra(EXTRA_MESSAGE, getTextCongratulate("NewYear"));
                 startActivity(intent);
@@ -105,24 +113,23 @@ public class MainActivity extends AppCompatActivity {
         //TODO реализовать работу с базой данных SQLite
         String[] congratulates;
         switch (holiday) {
+            case "Birthday":
+                congratulates = getResources().getStringArray(R.array.birthday);
+                return congratulates[new Random().nextInt(congratulates.length)];
             case "NewYear":
                 congratulates = getResources().getStringArray(R.array.newYear);
-                return getRndCongratulate(congratulates);
+                return congratulates[new Random().nextInt(congratulates.length)];
             case "Valentine":
                 congratulates = getResources().getStringArray(R.array.valentine);
-                return getRndCongratulate(congratulates);
+                return congratulates[new Random().nextInt(congratulates.length)];
             case "WomanDay":
                 congratulates = getResources().getStringArray(R.array.womansDay);
-                return getRndCongratulate(congratulates);
+                return congratulates[new Random().nextInt(congratulates.length)];
             case "MansDay":
                 congratulates = getResources().getStringArray(R.array.mansDay);
-                return getRndCongratulate(congratulates);
+                return congratulates[new Random().nextInt(congratulates.length)];
             default:
                 return "";
         }
-    }
-
-    private String getRndCongratulate(String[] strings) {
-        return strings[new Random().nextInt(strings.length)];
     }
 }
