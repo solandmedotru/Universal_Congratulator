@@ -111,6 +111,12 @@ public class MainActivity extends AppCompatActivity {
             case "Valentine":
                 congratulates = getResources().getStringArray(R.array.valentine);
                 return getRndCongratulate(congratulates);
+            case "WomanDay":
+                congratulates = getResources().getStringArray(R.array.womansDay);
+                return getRndCongratulate(congratulates);
+            case "MansDay":
+                congratulates = getResources().getStringArray(R.array.mansDay);
+                return getRndCongratulate(congratulates);
             default:
                 return "";
         }
