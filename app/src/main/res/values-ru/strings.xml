@@ -83,4 +83,6 @@
             С тобой средь ярких звёзд\n
         </item>
     </string-array>
+    <string name="action_settings">Настройки</string>
+    <string name="about_app">О приложении</string>
 </resources>
