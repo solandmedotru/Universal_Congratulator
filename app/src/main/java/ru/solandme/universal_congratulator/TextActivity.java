@@ -16,7 +16,6 @@ public class TextActivity extends AppCompatActivity {
     int currentPosition = 0;
     String[] congratulates;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -130,7 +129,7 @@ public class TextActivity extends AppCompatActivity {
     }
 
     private String getRndTextCongratulate(String holiday) {
-        //TODO реализовать работу с базой данных SQLite
+        //TODO реализовать работу с базой данных  SQLite
         String[] congratulates;
         int rndPosition;
         switch (holiday) {

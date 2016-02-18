@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), item.getTitle(), Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.about_app:
-                //TODO добавить описание приложения
+                //TODO добавить описание  приложения
                 Toast.makeText(getApplicationContext(), item.getTitle(), Toast.LENGTH_SHORT).show();
                 return true;
         }
@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case R.id.newYear:
-                intent.putExtra(EXTRA_MESSAGE,"NewYear");
+                intent.putExtra(EXTRA_MESSAGE, "NewYear");
                 startActivity(intent);
                 break;
             case R.id.valentine:
