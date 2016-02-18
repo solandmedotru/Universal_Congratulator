@@ -15,31 +15,23 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Для него"
+            android:text="@string/forHim"
             android:id="@+id/radioButton"
-            android:checked="false"
-            android:layout_alignParentTop="true"
-            android:layout_toLeftOf="@+id/radioButton2"
-            android:layout_toStartOf="@+id/radioButton2" />
+            android:checked="false" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Для нее"
+            android:text="@string/forHer"
             android:id="@+id/radioButton2"
-            android:checked="false"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
+            android:checked="false" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Универсальное"
+            android:text="@string/universal"
             android:id="@+id/radioButton3"
-            android:checked="true"
-            android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/radioButton2"
-            android:layout_toEndOf="@+id/radioButton2" />
+            android:checked="true"/>
     </RadioGroup>
 
     <RelativeLayout

@@ -17,6 +17,9 @@
     <string name="action_settings">Settings</string>
     <string name="about_app">About</string>
     <string name="textBirthday">Birthday</string>
+    <string name="forHim">Для него</string>
+    <string name="forHer">Для нее</string>
+    <string name="universal">Универсальное</string>
 
     <plurals name="days">
         <item quantity="one">%d day</item>
