@@ -1,251 +1,264 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinatorLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="ru.solandme.universal_congratulator.MainActivity">
 
-    <ScrollView
-        android:id="@+id/scrollView"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:foregroundGravity="fill">
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
 
-        <LinearLayout
+        <ScrollView
+            android:id="@+id/scrollView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:nestedScrollingEnabled="true"
-            android:orientation="vertical">
+            android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/textView"
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="10dp"
-                android:text="@string/first_header"
-                android:textSize="15sp" />
-
-            <RelativeLayout
-                android:id="@+id/birthday"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:onClick="onClick"
-                android:background="#efebe9">
-
-                <ImageView
-                    android:id="@+id/imageView5"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/ic_birthday"
-                    android:scaleType="fitCenter" />
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_centerVertical="true"
-                    android:layout_toRightOf="@+id/imageView5"
-                    android:layout_toEndOf="@+id/imageView5"
-                    android:gravity="left|center"
-                    android:layout_marginLeft="10dp" >
-
-                    <TextView
-                        android:id="@+id/textView2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/textBirthday"
-                        android:textSize="@dimen/txtSize"
-                        android:textStyle="normal" />
-
-                </LinearLayout>
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/newYear"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#B2EBF2"
-                android:onClick="onClick">
-
-                <ImageView
-                    android:id="@+id/imageView2"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/ic_december"
-                    android:scaleType="fitCenter" />
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_centerVertical="true"
-                    android:layout_toRightOf="@+id/imageView2"
-                    android:layout_toEndOf="@+id/imageView2"
-                    android:gravity="left|center"
-                    android:layout_marginLeft="10dp">
-
-                    <TextView
-                        android:id="@+id/textNewYear"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/textNewYear"
-                        android:textSize="@dimen/txtSize"
-                        android:textStyle="normal" />
-
-                    <TextView
-                        android:id="@+id/textDaysForNewYear"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/textDays"
-                        android:textSize="15sp" />
-                </LinearLayout>
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/valentine"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#F8BBD0"
-                android:onClick="onClick">
-
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_gravity="left|center"
-                    android:src="@drawable/ic_february"
-                    android:scaleType="fitCenter" />
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_centerVertical="true"
-                    android:layout_toRightOf="@+id/imageView"
-                    android:layout_toEndOf="@+id/imageView"
-                    android:gravity="left"
-                    android:layout_marginLeft="10dp">
-
-                    <TextView
-                        android:id="@+id/textValentineDay"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/textValentineDay"
-                        android:textSize="@dimen/txtSize"
-                        android:textStyle="normal" />
-
-                    <TextView
-                        android:id="@+id/textDaysForValentine"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/textDays"
-                        android:textSize="15sp" />
-                </LinearLayout>
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/mansDay"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#FFF9C4"
-                android:onClick="onClick">
-
-                <ImageView
-                    android:id="@+id/imageView3"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_gravity="left|center"
-                    android:src="@drawable/ic_23february"
-                    android:scaleType="fitCenter" />
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="left"
-                    android:layout_centerVertical="true"
-                    android:layout_toRightOf="@+id/imageView3"
-                    android:layout_toEndOf="@+id/imageView3"
-                    android:layout_marginLeft="10dp">
-
-                    <TextView
-                        android:id="@+id/text23February"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/text23February"
-                        android:textSize="@dimen/txtSize"
-                        android:textStyle="normal" />
-
-                    <TextView
-                        android:id="@+id/textDaysForMansDay"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/textDays"
-                        android:textSize="15sp" />
-                </LinearLayout>
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/womansDay"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#DCEDC8"
-                android:onClick="onClick">
-
-                <ImageView
-                    android:id="@+id/imageView4"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_gravity="left|center"
-                    android:src="@drawable/ic_8march"
-                    android:scaleType="fitCenter" />
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="left"
-                    android:layout_centerVertical="true"
-                    android:layout_toRightOf="@+id/imageView4"
-                    android:layout_toEndOf="@+id/imageView4"
-                    android:layout_marginLeft="10dp">
-
-                    <TextView
-                        android:id="@+id/text8March"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/text8March"
-                        android:textSize="@dimen/txtSize"
-                        android:textStyle="normal" />
-
-                    <TextView
-                        android:id="@+id/textDaysForWomanDay"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/textDays"
-                        android:textSize="15sp" />
-                </LinearLayout>
-            </RelativeLayout>
-
-            <Button
-                style="?android:attr/buttonStyleSmall"
-                android:id="@+id/btnHolidaysCalendar"
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#9fa8da"
-                android:onClick="onClick"
-                android:text="@string/btnTextHolidayCalendar"
-                android:padding="6dp"
-                android:layout_gravity="right"
-                android:layout_margin="10dp"
-                android:textSize="10sp" />
+                android:nestedScrollingEnabled="true"
+                android:orientation="vertical">
 
-        </LinearLayout>
-    </ScrollView>
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp"
+                    android:text="@string/first_header"
+                    android:textSize="15sp" />
 
-</RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/birthday"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#efebe9"
+                    android:onClick="onClick">
+
+                    <ImageView
+                        android:id="@+id/imageView5"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_birthday" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toEndOf="@+id/imageView5"
+                        android:layout_toRightOf="@+id/imageView5"
+                        android:gravity="left|center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/textBirthday"
+                            android:textSize="@dimen/txtSize"
+                            android:textStyle="normal" />
+
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/newYear"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#B2EBF2"
+                    android:onClick="onClick">
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_december" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toEndOf="@+id/imageView2"
+                        android:layout_toRightOf="@+id/imageView2"
+                        android:gravity="left|center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textNewYear"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/textNewYear"
+                            android:textSize="@dimen/txtSize"
+                            android:textStyle="normal" />
+
+                        <TextView
+                            android:id="@+id/textDaysForNewYear"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/textDays"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/valentine"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#F8BBD0"
+                    android:onClick="onClick">
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="left|center"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_february" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toEndOf="@+id/imageView"
+                        android:layout_toRightOf="@+id/imageView"
+                        android:gravity="left"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textValentineDay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/textValentineDay"
+                            android:textSize="@dimen/txtSize"
+                            android:textStyle="normal" />
+
+                        <TextView
+                            android:id="@+id/textDaysForValentine"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/textDays"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/mansDay"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#FFF9C4"
+                    android:onClick="onClick">
+
+                    <ImageView
+                        android:id="@+id/imageView3"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="left|center"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_23february" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toEndOf="@+id/imageView3"
+                        android:layout_toRightOf="@+id/imageView3"
+                        android:gravity="left"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/text23February"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/text23February"
+                            android:textSize="@dimen/txtSize"
+                            android:textStyle="normal" />
+
+                        <TextView
+                            android:id="@+id/textDaysForMansDay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/textDays"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/womansDay"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#DCEDC8"
+                    android:onClick="onClick">
+
+                    <ImageView
+                        android:id="@+id/imageView4"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="left|center"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_8march" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toEndOf="@+id/imageView4"
+                        android:layout_toRightOf="@+id/imageView4"
+                        android:gravity="left"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/text8March"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/text8March"
+                            android:textSize="@dimen/txtSize"
+                            android:textStyle="normal" />
+
+                        <TextView
+                            android:id="@+id/textDaysForWomanDay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/textDays"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+                </RelativeLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/btnHolidaysCalendar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/scrollView"
+            android:layout_alignParentBottom="true"
+            android:layout_alignRight="@+id/scrollView"
+            android:layout_margin="16dp"
+            android:onClick="onClick"
+            android:src="@drawable/ic_event_note_24dp"
+            app:fabSize="normal"
+            app:layout_anchor="@id/scrollView"
+            app:layout_anchorGravity="bottom|right|end"
+            app:pressedTranslationZ="12dp"
+            app:elevation="6dp"
+            app:backgroundTint="#F06292"
+            app:rippleColor="#e91e63" />
+
+    </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>
