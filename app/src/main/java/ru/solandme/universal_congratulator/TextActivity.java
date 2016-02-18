@@ -42,14 +42,11 @@ public class TextActivity extends AppCompatActivity {
     }
 
     public void onClick(View v) {
-        // по id определеяем кнопку, вызвавшую этот обработчик
         switch (v.getId()) {
             case R.id.btnNext:
-                // кнопка Next
                 textCongratulate.setText(getNextTextCongratulate(getHoliday()));
                 break;
             case R.id.btnPrev:
-                // кнопка Prev
                 textCongratulate.setText(getPrevTextCongratulate(getHoliday()));
                 break;
         }
@@ -102,7 +99,7 @@ public class TextActivity extends AppCompatActivity {
     }
 
     private int getNextPosition() {
-        if (currentPosition < congratulates.length-1) {
+        if (currentPosition < congratulates.length - 1) {
             currentPosition = currentPosition + 1;
         } else {
             currentPosition = 0;
@@ -114,7 +111,7 @@ public class TextActivity extends AppCompatActivity {
         if (currentPosition > 0) {
             currentPosition = currentPosition - 1;
         } else {
-            currentPosition = congratulates.length-1;
+            currentPosition = congratulates.length - 1;
         }
         return currentPosition;
     }
