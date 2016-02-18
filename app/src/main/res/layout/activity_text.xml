@@ -60,7 +60,7 @@
             android:layout_below="@+id/textCongratulate"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="5dp"
-            android:textSize="10dp"
+            android:textSize="10sp"
             android:onClick="onClick" />
 
         <Button
@@ -72,7 +72,7 @@
             android:layout_alignTop="@+id/btnSendSMS"
             android:layout_toRightOf="@+id/btnSendSMS"
             android:layout_toEndOf="@+id/btnSendSMS"
-            android:textSize="10dp"
+            android:textSize="10sp"
             android:onClick="onClick" />
 
         <Button
@@ -84,7 +84,7 @@
             android:layout_alignTop="@+id/btnSendSMS"
             android:layout_toLeftOf="@+id/btnSendSMS"
             android:layout_toStartOf="@+id/btnSendSMS"
-            android:textSize="10dp"
+            android:textSize="10sp"
             android:onClick="onClick" />
 
     </RelativeLayout>
