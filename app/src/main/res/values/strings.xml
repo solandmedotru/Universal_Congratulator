@@ -10,7 +10,7 @@
     <string name="textBtnSendSMS">Send SMS</string>
     <string name="textBtnNext">Next</string>
     <string name="textFldEmpty">Empty</string>
-    <string name="textBtnBefore">Before</string>
+    <string name="textBtnPrev">Before</string>
     <string name="textFinish">is done</string>
     <string name="btnTextHolidayCalendar">Holidays Calendar</string>
 

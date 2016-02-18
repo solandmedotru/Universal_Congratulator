@@ -2,7 +2,6 @@ package ru.solandme.universal_congratulator;
 
 import android.content.Intent;
 
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -13,7 +12,6 @@ import android.widget.Toast;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
-import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     public final static String EXTRA_MESSAGE = "ru.solandme.universal_congratulator.MESSAGE";
@@ -83,23 +81,23 @@ public class MainActivity extends AppCompatActivity {
 
         switch (view.getId()) {
             case R.id.birthday:
-                intent.putExtra(EXTRA_MESSAGE, getTextCongratulate("Birthday"));
+                intent.putExtra(EXTRA_MESSAGE, "Birthday");
                 startActivity(intent);
                 break;
             case R.id.newYear:
-                intent.putExtra(EXTRA_MESSAGE, getTextCongratulate("NewYear"));
+                intent.putExtra(EXTRA_MESSAGE,"NewYear");
                 startActivity(intent);
                 break;
             case R.id.valentine:
-                intent.putExtra(EXTRA_MESSAGE, getTextCongratulate("Valentine"));
+                intent.putExtra(EXTRA_MESSAGE, "Valentine");
                 startActivity(intent);
                 break;
             case R.id.womansDay:
-                intent.putExtra(EXTRA_MESSAGE, getTextCongratulate("WomanDay"));
+                intent.putExtra(EXTRA_MESSAGE, "WomanDay");
                 startActivity(intent);
                 break;
             case R.id.mansDay:
-                intent.putExtra(EXTRA_MESSAGE, getTextCongratulate("MansDay"));
+                intent.putExtra(EXTRA_MESSAGE, "MansDay");
                 startActivity(intent);
                 break;
             case R.id.btnHolidaysCalendar:
@@ -108,28 +106,4 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    @NonNull
-    private String getTextCongratulate(String holiday) {
-        //TODO реализовать работу с базой данных SQLite
-        String[] congratulates;
-        switch (holiday) {
-            case "Birthday":
-                congratulates = getResources().getStringArray(R.array.birthday);
-                return congratulates[new Random().nextInt(congratulates.length)];
-            case "NewYear":
-                congratulates = getResources().getStringArray(R.array.newYear);
-                return congratulates[new Random().nextInt(congratulates.length)];
-            case "Valentine":
-                congratulates = getResources().getStringArray(R.array.valentine);
-                return congratulates[new Random().nextInt(congratulates.length)];
-            case "WomanDay":
-                congratulates = getResources().getStringArray(R.array.womansDay);
-                return congratulates[new Random().nextInt(congratulates.length)];
-            case "MansDay":
-                congratulates = getResources().getStringArray(R.array.mansDay);
-                return congratulates[new Random().nextInt(congratulates.length)];
-            default:
-                return "";
-        }
-    }
 }
