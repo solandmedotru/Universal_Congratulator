@@ -1,5 +1,7 @@
 package ru.solandme.universal_congratulator;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -49,7 +51,18 @@ public class TextActivity extends AppCompatActivity {
             case R.id.btnPrev:
                 textCongratulate.setText(getPrevTextCongratulate(getHoliday()));
                 break;
+            case R.id.btnSendSMS:
+                String message = textCongratulate.getText().toString();
+                sendSMS("", message);
+                break;
         }
+    }
+
+    private void sendSMS(String phoneNumber, String message) {
+        String toSms = "smsto:" + phoneNumber;
+        Intent sms = new Intent(Intent.ACTION_SENDTO, Uri.parse(toSms));
+        sms.putExtra("sms_body", message);
+        startActivity(sms);
     }
 
     private String getNextTextCongratulate(String holiday) {

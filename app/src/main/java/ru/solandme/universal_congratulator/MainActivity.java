@@ -100,9 +100,9 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra(EXTRA_MESSAGE, "MansDay");
                 startActivity(intent);
                 break;
-            case R.id.btnHolidaysCalendar:
-                Intent intent2 = new Intent(getApplicationContext(), CalendarActivity.class);
-                startActivity(intent2);
+//            case R.id.btnHolidaysCalendar:
+//                Intent intent2 = new Intent(this, CalendarActivity.class);
+//                startActivity(intent2);
         }
     }
 
