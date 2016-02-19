@@ -18,10 +18,10 @@ public class CalendarActivity extends AppCompatActivity {
 
     private void initViews() {
         Calendar todayData = new GregorianCalendar();
-        Calendar maxDate = new GregorianCalendar(todayData.get(Calendar.YEAR) + 1, todayData.get(Calendar.MONTH), todayData.get(Calendar.DAY_OF_MONTH));
+        Calendar maxDate = new GregorianCalendar((todayData.get(Calendar.YEAR) + 1), todayData.get(Calendar.MONTH), todayData.get(Calendar.DAY_OF_MONTH));
         CalendarView calendarView = (CalendarView) findViewById(R.id.calendarView);
 
-        calendarView.setMinDate(todayData.getTimeInMillis());
+        calendarView.setMinDate(todayData.getTimeInMillis()-1000);
         calendarView.setMaxDate(maxDate.getTimeInMillis());
     }
 }

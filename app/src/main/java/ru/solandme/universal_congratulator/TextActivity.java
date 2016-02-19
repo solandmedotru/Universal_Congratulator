@@ -2,12 +2,10 @@ package ru.solandme.universal_congratulator;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
 
@@ -53,7 +51,7 @@ public class TextActivity extends AppCompatActivity {
             case R.id.btnPrev:
                 textCongratulate.setText(getPrevTextCongratulate(getHoliday()));
                 break;
-            case R.id.btnSendSMS:
+            case R.id.btnSend:
                 String message = textCongratulate.getText().toString();
                 sendSMS("", message);
                 break;

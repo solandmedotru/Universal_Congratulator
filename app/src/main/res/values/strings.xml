@@ -7,7 +7,7 @@
     <string name="text8March">Woman`s day</string>
     <string name="textDays">days</string>
     <string name="textNow">now</string>
-    <string name="textBtnSendSMS">Send SMS</string>
+    <string name="textBtnSend">Send</string>
     <string name="textBtnNext">Next</string>
     <string name="textBtnPrev">Before</string>
     <string name="textFinish">is done</string>
@@ -18,7 +18,8 @@
     <string name="forHim">For Him</string>
     <string name="forHer">For Her</string>
     <string name="universal">Universal</string>
-    <string name="textFldEmpty">С Новым годом поздравляю\n
+    <string name="textFldEmpty">
+            С Новым годом поздравляю\n
             И от всей души желаю\n
             Веселиться и смеяться,\n
             Ни на что не обижаться,\n
