@@ -255,7 +255,7 @@
             app:layout_anchorGravity="bottom|right"
             app:pressedTranslationZ="12dp"
             app:elevation="6dp"
-            app:backgroundTint="#F06292"
-            app:rippleColor="#e91e63" />
+            app:backgroundTint="@color/colorPrimary"
+            app:rippleColor="@color/colorAccent" />
     </RelativeLayout>
 </android.support.design.widget.CoordinatorLayout>
