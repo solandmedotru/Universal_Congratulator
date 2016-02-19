@@ -9,17 +9,31 @@
     <string name="textNow">now</string>
     <string name="textBtnSendSMS">Send SMS</string>
     <string name="textBtnNext">Next</string>
-    <string name="textFldEmpty">Empty</string>
     <string name="textBtnPrev">Before</string>
     <string name="textFinish">is done</string>
     <string name="btnTextHolidayCalendar">Holidays Calendar</string>
-
     <string name="action_settings">Settings</string>
     <string name="about_app">About</string>
     <string name="textBirthday">Birthday</string>
-    <string name="forHim">Для него</string>
-    <string name="forHer">Для нее</string>
-    <string name="universal">Универсальное</string>
+    <string name="forHim">For Him</string>
+    <string name="forHer">For Her</string>
+    <string name="universal">Universal</string>
+    <string name="textFldEmpty">С Новым годом поздравляю\n
+            И от всей души желаю\n
+            Веселиться и смеяться,\n
+            Ни на что не обижаться,\n
+            Жить легко и без забот\n
+            Весь грядущий новый год.\n\n
+
+            Наслаждаться каждым мигом\n
+            И дарить свое тепло,\n
+            Быть всегда на позитиве,\n
+            Чтоб всегда во всём везло!\n\n
+
+            С Новым годом! С новым счастьем!\n
+            Смеха, мира и добра!\n
+            Пусть обходят все ненастья,\n
+            Жизнь одарит вас сполна!\n</string>
 
     <plurals name="days">
         <item quantity="one">%d day</item>

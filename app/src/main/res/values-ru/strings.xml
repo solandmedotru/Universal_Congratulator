@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Поздравитель</string>
+    <string name="action_settings">Настройки</string>
+    <string name="about_app">О приложении</string>
+    <string name="textBirthday">День рождения</string>
+    <string name="forHer">Для нее</string>
+    <string name="forHim">Для него</string>
+    <string name="btnTextHolidayCalendar">Календарь праздников</string>
+    <string name="textBtnPrev">Назад</string>
+    <string name="textFinish">Прошло</string>
+    <string name="universal">Универсальное</string>
     <string name="first_header">Выбирите категорию поздравлений:</string>
     <string name="textValentineDay">Валентинов день</string>
     <string name="textNewYear">Новый Год</string>
@@ -26,10 +35,6 @@
             Смеха, мира и добра!\n
             Пусть обходят все ненастья,\n
             Жизнь одарит вас сполна!\n</string>
-    <string name="textBtnPrev">Назад</string>
-    <string name="textFinish">прошел</string>
-    <string name="btnTextHolidayCalendar">Календарь праздников</string>
-
     <plurals name="days">
         <item quantity="one">%d день</item>
         <item quantity="few">%d дня</item>
@@ -334,7 +339,4 @@
 
 
     </string-array>
-    <string name="action_settings">Настройки</string>
-    <string name="about_app">О приложении</string>
-    <string name="textBirthday">День рождения</string>
 </resources>
