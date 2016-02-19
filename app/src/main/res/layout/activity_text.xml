@@ -62,10 +62,14 @@
                 android:layout_height="wrap_content"
                 android:text="@string/textBtnSend"
                 android:id="@+id/btnSend"
+                android:drawableTop="@drawable/ic_share_24dp"
+                android:background="@drawable/custom_btn_background"
+                android:textColor="@android:color/white"
                 android:layout_below="@+id/textCongratulate"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="5dp"
-                android:textSize="10sp"
+                android:layout_marginLeft="20dp"
+                android:padding="6dp"
+                android:textSize="12sp"
                 android:onClick="onClick" />
 
             <Button
@@ -74,10 +78,15 @@
                 android:layout_height="wrap_content"
                 android:text="@string/textBtnNext"
                 android:id="@+id/btnNext"
+                android:drawableTop="@drawable/ic_chevron_right_24dp"
+                android:background="@drawable/custom_btn_background"
+                android:textColor="@android:color/white"
                 android:layout_alignTop="@+id/btnSend"
                 android:layout_toRightOf="@+id/btnSend"
                 android:layout_toEndOf="@+id/btnSend"
-                android:textSize="10sp"
+                android:textSize="12sp"
+                android:padding="6dp"
+                android:layout_marginLeft="20dp"
                 android:onClick="onClick" />
 
             <Button
@@ -86,10 +95,15 @@
                 android:layout_height="wrap_content"
                 android:text="@string/textBtnPrev"
                 android:id="@+id/btnPrev"
+                android:drawableTop="@drawable/ic_chevron_left_24dp"
+                android:background="@drawable/custom_btn_background"
+                android:textColor="@android:color/white"
                 android:layout_alignTop="@+id/btnSend"
                 android:layout_toLeftOf="@+id/btnSend"
                 android:layout_toStartOf="@+id/btnSend"
-                android:textSize="10sp"
+                android:textSize="12sp"
+                android:padding="6dp"
+                android:layout_marginLeft="20dp"
                 android:onClick="onClick" />
 
         </RelativeLayout>
