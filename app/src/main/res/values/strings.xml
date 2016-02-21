@@ -35,6 +35,7 @@
             Смеха, мира и добра!\n
             Пусть обходят все ненастья,\n
             Жизнь одарит вас сполна!\n</string>
+    <string name="textTomorrow">tomorrow</string>
 
     <plurals name="days">
         <item quantity="one">%d day</item>

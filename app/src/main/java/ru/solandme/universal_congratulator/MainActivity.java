@@ -66,11 +66,13 @@ public class MainActivity extends AppCompatActivity {
         Calendar calendar = new GregorianCalendar(year, month - 1, day);
         int days = (int) ((calendar.getTimeInMillis() - todayCalendar.getTimeInMillis()) / 1000) / 86400;
 
-        if (days > 1) {
+        if (days >= 1) {
             return getResources().getQuantityString(R.plurals.days, days, days);
-        } else if (days < 0) {
+        } else if (days < -2) {
             return getResources().getQuantityString(R.plurals.days, daysInYear + days, daysInYear + days);
         } else if (days == 0) {
+            return " " + getString(R.string.textTomorrow);
+        } else if (days == -1) {
             return " " + getString(R.string.textNow);
         } else {
             return " " + getString(R.string.textFinish);
