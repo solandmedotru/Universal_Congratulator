@@ -78,7 +78,6 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = new Intent(getApplicationContext(), TextActivity.class);
 
-
         switch (view.getId()) {
             case R.id.birthday:
                 intent.putExtra(EXTRA_MESSAGE, "Birthday");

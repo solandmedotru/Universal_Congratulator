@@ -15,27 +15,48 @@ public class TextActivity extends AppCompatActivity {
     TextView textCongratulate;
     Button btnNext;
     int currentPosition = 0;
-    String[] congratulates;
+
+    Holiday holiday = new Holiday();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_text);
+
+        holiday.setHolidayName(getHolidayNameFromIntent());
+        holiday.setCongratulates(getCongratulateArray());
+
         initViews();
+    }
+
+    private String[] getCongratulateArray() {
+        // TODO реализовать выборку из базы данных
+        switch (holiday.getHolidayName()) {
+            case "Birthday":
+                return getResources().getStringArray(R.array.birthday);
+            case "NewYear":
+                return getResources().getStringArray(R.array.newYear);
+            case "Valentine":
+                return getResources().getStringArray(R.array.valentine);
+            case "WomanDay":
+                return getResources().getStringArray(R.array.womansDay);
+            case "MansDay":
+                return getResources().getStringArray(R.array.mansDay);
+            default:
+                return null;
+        }
     }
 
     private void initViews() {
         btnNext = (Button) findViewById(R.id.btnNext);
         textCongratulate = (TextView) findViewById(R.id.textCongratulate);
 
-        String holiday = getHoliday();
-        if (holiday != null) {
-            String text = getRndTextCongratulate(holiday);
-            textCongratulate.setText(text);
+        if (holiday.getHolidayName() != null) {
+            textCongratulate.setText(getRndTextCongratulate());
         }
     }
 
-    private String getHoliday() {
+    private String getHolidayNameFromIntent() {
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             return extras.getString(MainActivity.EXTRA_MESSAGE);
@@ -46,10 +67,10 @@ public class TextActivity extends AppCompatActivity {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btnNext:
-                textCongratulate.setText(getNextTextCongratulate(getHoliday()));
+                textCongratulate.setText(getNextTextCongratulate());
                 break;
             case R.id.btnPrev:
-                textCongratulate.setText(getPrevTextCongratulate(getHoliday()));
+                textCongratulate.setText(getPrevTextCongratulate());
                 break;
             case R.id.btnSend:
                 String message = textCongratulate.getText().toString();
@@ -65,54 +86,17 @@ public class TextActivity extends AppCompatActivity {
         startActivity(sms);
     }
 
-    private String getNextTextCongratulate(String holiday) {
-
-        switch (holiday) {
-            case "Birthday":
-                congratulates = getResources().getStringArray(R.array.birthday);
-                return congratulates[getNextPosition()];
-            case "NewYear":
-                congratulates = getResources().getStringArray(R.array.newYear);
-                return congratulates[getNextPosition()];
-            case "Valentine":
-                congratulates = getResources().getStringArray(R.array.valentine);
-                return congratulates[getNextPosition()];
-            case "WomanDay":
-                congratulates = getResources().getStringArray(R.array.womansDay);
-                return congratulates[getNextPosition()];
-            case "MansDay":
-                congratulates = getResources().getStringArray(R.array.mansDay);
-                return congratulates[getNextPosition()];
-            default:
-                return "";
-        }
+    private String getNextTextCongratulate() {
+        return holiday.congratulates[getNextPosition()];
     }
 
-    private String getPrevTextCongratulate(String holiday) {
+    private String getPrevTextCongratulate() {
+        return holiday.getCongratulates()[getPrevPosition()];
 
-        switch (holiday) {
-            case "Birthday":
-                congratulates = getResources().getStringArray(R.array.birthday);
-                return congratulates[getPrevPosition()];
-            case "NewYear":
-                congratulates = getResources().getStringArray(R.array.newYear);
-                return congratulates[getPrevPosition()];
-            case "Valentine":
-                congratulates = getResources().getStringArray(R.array.valentine);
-                return congratulates[getPrevPosition()];
-            case "WomanDay":
-                congratulates = getResources().getStringArray(R.array.womansDay);
-                return congratulates[getPrevPosition()];
-            case "MansDay":
-                congratulates = getResources().getStringArray(R.array.mansDay);
-                return congratulates[getPrevPosition()];
-            default:
-                return "";
-        }
     }
 
     private int getNextPosition() {
-        if (currentPosition < congratulates.length - 1) {
+        if (currentPosition < holiday.getCongratulates().length - 1) {
             currentPosition = currentPosition + 1;
         } else {
             currentPosition = 0;
@@ -124,43 +108,16 @@ public class TextActivity extends AppCompatActivity {
         if (currentPosition > 0) {
             currentPosition = currentPosition - 1;
         } else {
-            currentPosition = congratulates.length - 1;
+            currentPosition = holiday.getCongratulates().length - 1;
         }
         return currentPosition;
     }
 
-    private String getRndTextCongratulate(String holiday) {
+    private String getRndTextCongratulate() {
         //TODO реализовать работу с базой данных  SQLite
-        String[] congratulates;
-        int rndPosition;
-        switch (holiday) {
-            case "Birthday":
-                congratulates = getResources().getStringArray(R.array.birthday);
-                rndPosition = new Random().nextInt(congratulates.length);
-                currentPosition = rndPosition;
-                return congratulates[rndPosition];
-            case "NewYear":
-                congratulates = getResources().getStringArray(R.array.newYear);
-                rndPosition = new Random().nextInt(congratulates.length);
-                currentPosition = rndPosition;
-                return congratulates[rndPosition];
-            case "Valentine":
-                congratulates = getResources().getStringArray(R.array.valentine);
-                rndPosition = new Random().nextInt(congratulates.length);
-                currentPosition = rndPosition;
-                return congratulates[rndPosition];
-            case "WomanDay":
-                congratulates = getResources().getStringArray(R.array.womansDay);
-                rndPosition = new Random().nextInt(congratulates.length);
-                currentPosition = rndPosition;
-                return congratulates[rndPosition];
-            case "MansDay":
-                congratulates = getResources().getStringArray(R.array.mansDay);
-                rndPosition = new Random().nextInt(congratulates.length);
-                currentPosition = rndPosition;
-                return congratulates[rndPosition];
-            default:
-                return "";
-        }
+        int maxPosition = holiday.getCongratulates().length;
+        int rndPosition = new Random().nextInt(maxPosition);
+        currentPosition = rndPosition;
+        return holiday.getCongratulates()[rndPosition];
     }
 }
