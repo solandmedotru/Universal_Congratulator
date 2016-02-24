@@ -71,8 +71,6 @@ public class MainActivity extends AppCompatActivity {
         } else if (days < -2) {
             return getResources().getQuantityString(R.plurals.days, daysInYear + days, daysInYear + days);
         } else if (days == 0) {
-            return " " + getString(R.string.textTomorrow);
-        } else if (days == -1) {
             return " " + getString(R.string.textNow);
         } else {
             return " " + getString(R.string.textFinish);

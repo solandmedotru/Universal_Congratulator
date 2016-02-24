@@ -8,7 +8,7 @@
     <string name="forHim">Для него</string>
     <string name="btnTextHolidayCalendar">Календарь праздников</string>
     <string name="textBtnPrev">Назад</string>
-    <string name="textFinish">Прошло</string>
+    <string name="textFinish">прошел</string>
     <string name="universal">Универсальное</string>
     <string name="first_header">Выбирите категорию поздравлений:</string>
     <string name="textValentineDay">Валентинов день</string>
@@ -16,7 +16,7 @@
     <string name="text8March">8 Марта</string>
     <string name="text23February">23 Февраля</string>
     <string name="textDays">дней</string>
-    <string name="textNow">сегодня</string>
+    <string name="textNow">менее суток</string>
     <string name="textBtnNext">Далее</string>
     <string name="textBtnSend">Отправить</string>
     <string name="textFldEmpty">
