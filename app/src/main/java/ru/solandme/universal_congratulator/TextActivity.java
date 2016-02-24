@@ -12,21 +12,35 @@ import android.widget.TextView;
 import java.util.Random;
 
 public class TextActivity extends AppCompatActivity {
+
     TextView textCongratulate;
     Button btnNext;
-    int currentPosition = 0;
-
-    Holiday holiday = new Holiday();
+    int currentCongratulateTextPosition;
+    Holiday holiday;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_text);
+        initHoliday();
+        initViews();
+    }
 
+    private void initHoliday() {
+        currentCongratulateTextPosition = 0;
+        holiday = new Holiday();
         holiday.setHolidayName(getHolidayNameFromIntent());
         holiday.setCongratulates(getCongratulateArray());
+        holiday.setSex(Holiday.UNIVERSAL);
+    }
 
-        initViews();
+    private void initViews() {
+        btnNext = (Button) findViewById(R.id.btnNext);
+        textCongratulate = (TextView) findViewById(R.id.textCongratulate);
+
+        if (holiday.getHolidayName() != null) {
+            textCongratulate.setText(getRndTextCongratulate());
+        }
     }
 
     private String[] getCongratulateArray() {
@@ -47,21 +61,51 @@ public class TextActivity extends AppCompatActivity {
         }
     }
 
-    private void initViews() {
-        btnNext = (Button) findViewById(R.id.btnNext);
-        textCongratulate = (TextView) findViewById(R.id.textCongratulate);
-
-        if (holiday.getHolidayName() != null) {
-            textCongratulate.setText(getRndTextCongratulate());
-        }
-    }
-
     private String getHolidayNameFromIntent() {
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             return extras.getString(MainActivity.EXTRA_MESSAGE);
         }
         return null;
+    }
+
+    private String getNextTextCongratulate() {
+        return holiday.congratulates[getNextPosition()];
+    }
+
+    private String getPrevTextCongratulate() {
+        return holiday.getCongratulates()[getPrevPosition()];
+    }
+
+    private int getNextPosition() {
+        if (currentCongratulateTextPosition < holiday.getCongratulates().length - 1) {
+            currentCongratulateTextPosition++;
+        } else {
+            currentCongratulateTextPosition = 0;
+        }
+        return currentCongratulateTextPosition;
+    }
+
+    private int getPrevPosition() {
+        if (currentCongratulateTextPosition > 0) {
+            currentCongratulateTextPosition--;
+        } else {
+            currentCongratulateTextPosition = holiday.getCongratulates().length - 1;
+        }
+        return currentCongratulateTextPosition;
+    }
+
+    private String getRndTextCongratulate() {
+        int rndPosition = new Random().nextInt(holiday.getCongratulates().length);
+        currentCongratulateTextPosition = rndPosition;
+        return holiday.getCongratulates()[rndPosition];
+    }
+
+    private void sendSMS(String phoneNumber, String message) {
+        String toSms = "smsto:" + phoneNumber;
+        Intent sms = new Intent(Intent.ACTION_SENDTO, Uri.parse(toSms));
+        sms.putExtra("sms_body", message);
+        startActivity(sms);
     }
 
     public void onClick(View v) {
@@ -77,47 +121,5 @@ public class TextActivity extends AppCompatActivity {
                 sendSMS("", message);
                 break;
         }
-    }
-
-    private void sendSMS(String phoneNumber, String message) {
-        String toSms = "smsto:" + phoneNumber;
-        Intent sms = new Intent(Intent.ACTION_SENDTO, Uri.parse(toSms));
-        sms.putExtra("sms_body", message);
-        startActivity(sms);
-    }
-
-    private String getNextTextCongratulate() {
-        return holiday.congratulates[getNextPosition()];
-    }
-
-    private String getPrevTextCongratulate() {
-        return holiday.getCongratulates()[getPrevPosition()];
-
-    }
-
-    private int getNextPosition() {
-        if (currentPosition < holiday.getCongratulates().length - 1) {
-            currentPosition = currentPosition + 1;
-        } else {
-            currentPosition = 0;
-        }
-        return currentPosition;
-    }
-
-    private int getPrevPosition() {
-        if (currentPosition > 0) {
-            currentPosition = currentPosition - 1;
-        } else {
-            currentPosition = holiday.getCongratulates().length - 1;
-        }
-        return currentPosition;
-    }
-
-    private String getRndTextCongratulate() {
-        //TODO реализовать работу с базой данных  SQLite
-        int maxPosition = holiday.getCongratulates().length;
-        int rndPosition = new Random().nextInt(maxPosition);
-        currentPosition = rndPosition;
-        return holiday.getCongratulates()[rndPosition];
     }
 }

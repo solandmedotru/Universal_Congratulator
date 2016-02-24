@@ -6,6 +6,10 @@ public class Holiday {
     String[] congratulates;
     int sex;
 
+    public static final int UNIVERSAL = 0;
+    public static final int FOR_HIM = 1;
+    public static final int FOR_HER = 2;
+
     public Holiday() {
     }
 
