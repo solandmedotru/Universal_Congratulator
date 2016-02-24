@@ -34,9 +34,10 @@ public class TextActivity extends AppCompatActivity {
         setContentView(R.layout.activity_text);
 
 
+
         sqlHelper = new DatabaseHelper(getApplicationContext());
         // создаем базу данных
-        sqlHelper.create_db();
+        sqlHelper.getReadableDatabase();
         initHoliday();
         initViews();
 
@@ -77,7 +78,7 @@ public class TextActivity extends AppCompatActivity {
             myArrayList.add(note);
         }
         String[] myArray = myArrayList.toArray(new String[myArrayList.size()]);
-//        userCursor.close();
+        userCursor.close();
         return myArray;
 
 
