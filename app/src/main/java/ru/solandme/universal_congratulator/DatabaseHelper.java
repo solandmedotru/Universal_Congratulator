@@ -12,7 +12,7 @@ import java.sql.SQLException;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    private static String DB_PATH = "/data/data/ru.solandme.universal_congratulator/databases/";
+    private static String DB_PATH = "";
     private static String DB_NAME = "Holidays";
     private static final int SCHEMA = 1; // версия базы данных
     static final String TABLE = "congratulate";
@@ -25,9 +25,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public SQLiteDatabase database;
     private Context myContext;
 
+
     public DatabaseHelper(Context context) {
         super(context, DB_NAME, null, SCHEMA);
         this.myContext=context;
+        DB_PATH = context.getApplicationInfo().dataDir + "/databases/";
     }
 
     @Override
@@ -69,6 +71,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         }
     }
+
     public void open() throws SQLException {
         String path = DB_PATH + DB_NAME;
         database = SQLiteDatabase.openDatabase(path, null,
