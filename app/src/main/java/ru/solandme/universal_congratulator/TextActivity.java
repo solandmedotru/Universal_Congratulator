@@ -3,10 +3,8 @@ package ru.solandme.universal_congratulator;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
-import android.support.v4.widget.SimpleCursorAdapter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -14,7 +12,6 @@ import android.widget.TextView;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 public class TextActivity extends AppCompatActivity {
@@ -26,7 +23,6 @@ public class TextActivity extends AppCompatActivity {
 
     DatabaseHelper sqlHelper;
     Cursor userCursor;
-    SimpleCursorAdapter userAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,12 +33,18 @@ public class TextActivity extends AppCompatActivity {
 
         sqlHelper = new DatabaseHelper(getApplicationContext());
         // создаем базу данных
+        sqlHelper.setForcedUpgrade();
         sqlHelper.getReadableDatabase();
         initHoliday();
         initViews();
 
     }
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        sqlHelper.close();
+        sqlHelper.database.close();
+    }
     private void initHoliday() {
         currentCongratulateTextPosition = 0;
         holiday = new Holiday();
@@ -63,7 +65,7 @@ public class TextActivity extends AppCompatActivity {
     private String[] getCongratulateArray() {
         // TODO реализовать выборку из базы данных
 
-        ArrayList<String> myArrayList = new ArrayList<String>();
+        ArrayList<String> myArrayList = new ArrayList<>();
         try {
             sqlHelper.open();
         } catch (SQLException e) {
