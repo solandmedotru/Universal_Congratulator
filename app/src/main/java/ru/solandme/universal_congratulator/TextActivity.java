@@ -23,6 +23,7 @@ public class TextActivity extends AppCompatActivity {
     Button btnNext;
     int currentCongratulateTextPosition;
     Holiday holiday;
+    int lastId;
 
     DatabaseHelper sqlHelper;
     Cursor userCursor;
@@ -113,7 +114,6 @@ public class TextActivity extends AppCompatActivity {
 
         userCursor = sqlHelper.database.rawQuery("select * from " + DatabaseHelper.TABLE + " where " +
                 DatabaseHelper.HOLIDAY + "=? AND " + DatabaseHelper.SEX + "=?", new String[]{holiday.getHolidayName(), String.valueOf(filter)});
-
 
         while (userCursor.moveToNext()) {
             String note = userCursor.getString(1);
