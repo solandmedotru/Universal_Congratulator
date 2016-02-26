@@ -4,7 +4,6 @@ public class Holiday {
     int _id;
     String holidayName;
     String[] congratulates;
-    int sex;
 
     public static final int UNIVERSAL = 0;
     public static final int FOR_HIM = 1;
@@ -35,13 +34,5 @@ public class Holiday {
 
     public void setCongratulates(String[] congratulates) {
         this.congratulates = congratulates;
-    }
-
-    public int getSex() {
-        return sex;
-    }
-
-    public void setSex(int sex) {
-        this.sex = sex;
     }
 }

@@ -7,6 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 
@@ -23,46 +26,82 @@ public class TextActivity extends AppCompatActivity {
 
     DatabaseHelper sqlHelper;
     Cursor userCursor;
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_text);
 
-
-
         sqlHelper = new DatabaseHelper(getApplicationContext());
         // создаем базу данных
         sqlHelper.setForcedUpgrade();
         sqlHelper.getReadableDatabase();
-        initHoliday();
         initViews();
-
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
         sqlHelper.close();
         sqlHelper.database.close();
     }
-    private void initHoliday() {
-        currentCongratulateTextPosition = 0;
-        holiday = new Holiday();
-        holiday.setHolidayName(getHolidayNameFromIntent());
-        holiday.setCongratulates(getCongratulateArray());
-        holiday.setSex(Holiday.UNIVERSAL);
-    }
 
     private void initViews() {
+
         btnNext = (Button) findViewById(R.id.btnNext);
         textCongratulate = (TextView) findViewById(R.id.textCongratulate);
 
-        if (holiday.getHolidayName() != null) {
-            textCongratulate.setText(getRndTextCongratulate());
+        currentCongratulateTextPosition = 0;
+        holiday = new Holiday();
+        holiday.setHolidayName(getHolidayNameFromIntent());
+        holiday.setCongratulates(getCongratulateArray(Holiday.UNIVERSAL));
+
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+
+        RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
+        RadioButton radioButtonForHer = (RadioButton) findViewById(R.id.radioButtonForHer);
+        RadioButton radioButtonForHim = (RadioButton) findViewById(R.id.radioButtonForHim);
+
+        if (((holiday.getHolidayName().equals("WomanDay")) || (holiday.getHolidayName().equals("NewYear")) || (holiday.getHolidayName().equals("MansDay")))) {
+            radioButtonForHer.setEnabled(false);
+            radioButtonForHim.setEnabled(false);
         }
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                // TODO Auto-generated method stub
+                switch (checkedId) {
+                    case R.id.radioButtonUniversal:
+                        holiday.setCongratulates(getCongratulateArray(Holiday.UNIVERSAL));
+                        break;
+                    case R.id.radioButtonForHim:
+                        holiday.setCongratulates(getCongratulateArray(Holiday.FOR_HIM));
+                        break;
+                    case R.id.radioButtonForHer:
+                        holiday.setCongratulates(getCongratulateArray(Holiday.FOR_HER));
+                        break;
+                    default:
+                        holiday.setCongratulates(getCongratulateArray(Holiday.UNIVERSAL));
+                        break;
+                }
+                textCongratulate.setText(getRndTextCongratulate());
+                progressBar.setMax(holiday.congratulates.length);
+                progressBar.setProgress(currentCongratulateTextPosition);
+            }
+        });
+        progressBar.setMax(holiday.congratulates.length);
+        progressBar.setProgress(currentCongratulateTextPosition);
     }
 
-    private String[] getCongratulateArray() {
+
+    private String[] getCongratulateArray(int filter) {
         // TODO реализовать выборку из базы данных
 
         ArrayList<String> myArrayList = new ArrayList<>();
@@ -73,7 +112,8 @@ public class TextActivity extends AppCompatActivity {
         }
 
         userCursor = sqlHelper.database.rawQuery("select * from " + DatabaseHelper.TABLE + " where " +
-                DatabaseHelper.HOLIDAY + "=?", new String[]{holiday.getHolidayName()});
+                DatabaseHelper.HOLIDAY + "=? AND " + DatabaseHelper.SEX + "=?", new String[]{holiday.getHolidayName(), String.valueOf(filter)});
+
 
         while (userCursor.moveToNext()) {
             String note = userCursor.getString(1);
@@ -137,6 +177,7 @@ public class TextActivity extends AppCompatActivity {
     private String getRndTextCongratulate() {
         int rndPosition = new Random().nextInt(holiday.getCongratulates().length);
         currentCongratulateTextPosition = rndPosition;
+        progressBar.setProgress(currentCongratulateTextPosition);
         return holiday.getCongratulates()[rndPosition];
     }
 
@@ -151,9 +192,11 @@ public class TextActivity extends AppCompatActivity {
         switch (v.getId()) {
             case R.id.btnNext:
                 textCongratulate.setText(getNextTextCongratulate());
+                progressBar.setProgress(currentCongratulateTextPosition);
                 break;
             case R.id.btnPrev:
                 textCongratulate.setText(getPrevTextCongratulate());
+                progressBar.setProgress(currentCongratulateTextPosition);
                 break;
             case R.id.btnSend:
                 String message = textCongratulate.getText().toString();

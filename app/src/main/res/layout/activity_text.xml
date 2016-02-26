@@ -1,112 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ru.solandme.universal_congratulator.TextActivity"
-    android:orientation="vertical">
+    android:padding="6dp"
+    tools:context="ru.solandme.universal_congratulator.TextActivity">
 
-<!--    <RadioGroup
+    <RadioGroup
+        android:id="@+id/radioGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="10dp">
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal">
 
         <RadioButton
+            android:id="@+id/radioButtonForHim"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/forHim"
-            android:id="@+id/radioButton"
-            android:checked="false" />
+            android:checked="false"
+            android:text="@string/forHim" />
 
         <RadioButton
+            android:id="@+id/radioButtonForHer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/forHer"
-            android:id="@+id/radioButton2"
-            android:checked="false" />
+            android:checked="false"
+            android:text="@string/forHer" />
 
         <RadioButton
+            android:id="@+id/radioButtonUniversal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/universal"
-            android:id="@+id/radioButton3"
-            android:checked="true"/>
-    </RadioGroup>-->
+            android:checked="true"
+            android:text="@string/universal" />
+    </RadioGroup>
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/scrollView2" >
+        android:layout_height="match_parent"
+        android:layout_above="@+id/linearLayout"
+        android:layout_below="@+id/radioGroup">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="10dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="@string/textFldEmpty"
-                android:id="@+id/textCongratulate"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:textSize="15sp"
-                android:textStyle="italic"
-                android:theme="@style/AppTheme" />
-
-            <Button
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/textBtnSend"
-                android:id="@+id/btnSend"
-                android:drawableTop="@drawable/ic_share_24dp"
-                android:background="@drawable/custom_btn_background"
-                android:textColor="@android:color/white"
-                android:layout_below="@+id/textCongratulate"
-                android:layout_centerHorizontal="true"
-                android:layout_marginLeft="20dp"
-                android:padding="6dp"
-                android:textSize="12sp"
-                android:onClick="onClick" />
-
-            <Button
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/textBtnNext"
-                android:id="@+id/btnNext"
-                android:drawableTop="@drawable/ic_chevron_right_24dp"
-                android:background="@drawable/custom_btn_background"
-                android:textColor="@android:color/white"
-                android:layout_alignTop="@+id/btnSend"
-                android:layout_toRightOf="@+id/btnSend"
-                android:layout_toEndOf="@+id/btnSend"
-                android:textSize="12sp"
-                android:padding="6dp"
-                android:layout_marginLeft="20dp"
-                android:onClick="onClick" />
-
-            <Button
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/textBtnPrev"
-                android:id="@+id/btnPrev"
-                android:drawableTop="@drawable/ic_chevron_left_24dp"
-                android:background="@drawable/custom_btn_background"
-                android:textColor="@android:color/white"
-                android:layout_alignTop="@+id/btnSend"
-                android:layout_toLeftOf="@+id/btnSend"
-                android:layout_toStartOf="@+id/btnSend"
-                android:textSize="12sp"
-                android:padding="6dp"
-                android:layout_marginLeft="20dp"
-                android:onClick="onClick" />
-
-        </RelativeLayout>
+        <TextView
+            android:id="@+id/textCongratulate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/textFldEmpty"
+            android:textAlignment="center"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="15sp"
+            android:textStyle="italic" />
     </ScrollView>
 
-</LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@android:style/Widget.Holo.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        android:visibility="visible" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/progressBar"
+        android:layout_margin="6dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnPrev"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="9dp"
+            android:layout_marginRight="3dp"
+            android:layout_weight="1"
+            android:background="@drawable/custom_btn_background"
+            android:drawableTop="@drawable/ic_chevron_left_24dp"
+            android:onClick="onClick"
+            android:text="@string/textBtnPrev"
+            android:textColor="@android:color/white"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/btnSend"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:layout_weight="1"
+            android:background="@drawable/custom_btn_background"
+            android:drawableTop="@drawable/ic_share_24dp"
+            android:onClick="onClick"
+            android:text="@string/textBtnSend"
+            android:textColor="@android:color/white"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/btnNext"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="9dp"
+            android:layout_weight="1"
+            android:background="@drawable/custom_btn_background"
+            android:drawableTop="@drawable/ic_chevron_right_24dp"
+            android:onClick="onClick"
+            android:text="@string/textBtnNext"
+            android:textColor="@android:color/white"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+</RelativeLayout>
