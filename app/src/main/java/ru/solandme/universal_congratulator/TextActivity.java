@@ -123,21 +123,6 @@ public class TextActivity extends AppCompatActivity {
         userCursor.close();
         return myArray;
 
-
-//        switch (holiday.getHolidayName()) {
-//            case "Birthday":
-//                return getResources().getStringArray(R.array.birthday);
-//            case "NewYear":
-//                return getResources().getStringArray(R.array.newYear);
-//            case "Valentine":
-//                return getResources().getStringArray(R.array.valentine);
-//            case "WomanDay":
-//                return getResources().getStringArray(R.array.womansDay);
-//            case "MansDay":
-//                return getResources().getStringArray(R.array.mansDay);
-//            default:
-//                return null;
-//        }
     }
 
     private String getHolidayNameFromIntent() {

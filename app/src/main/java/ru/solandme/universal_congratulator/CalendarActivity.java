@@ -37,8 +37,8 @@ public class CalendarActivity extends AppCompatActivity {
                 Intent intent = new Intent(Intent.ACTION_INSERT)
                         .setData(Events.CONTENT_URI)
                         .putExtra(EXTRA_EVENT_BEGIN_TIME, beginTime.getTimeInMillis())
-                        .putExtra(Events.TITLE, "Мой новый праздник")
-                        .putExtra(Events.DESCRIPTION, "Событие добавлено через приложение " + getResources().getString(R.string.app_name))
+                        .putExtra(Events.TITLE, getString(R.string.my_new_holiday))
+                        .putExtra(Events.DESCRIPTION, getString(R.string.event_description_text) + " " + getResources().getString(R.string.app_name))
                         .putExtra(Events.AVAILABILITY, Events.AVAILABILITY_BUSY);
                 startActivity(intent);
             }
