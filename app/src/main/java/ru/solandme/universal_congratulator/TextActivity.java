@@ -60,7 +60,7 @@ public class TextActivity extends AppCompatActivity {
 
         currentCongratulateTextPosition = 0;
         holiday = new Holiday();
-        holiday.setHolidayName(getHolidayNameFromIntent());
+        holiday.setKey(getHolidayNameFromIntent());
         holiday.setCongratulates(getCongratulateArray(Holiday.UNIVERSAL));
 
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
@@ -68,8 +68,9 @@ public class TextActivity extends AppCompatActivity {
         RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
         RadioButton radioButtonForHer = (RadioButton) findViewById(R.id.radioButtonForHer);
         RadioButton radioButtonForHim = (RadioButton) findViewById(R.id.radioButtonForHim);
+        textCongratulate.setText(getRndTextCongratulate());
 
-        if (((holiday.getHolidayName().equals("WomanDay")) || (holiday.getHolidayName().equals("NewYear")) || (holiday.getHolidayName().equals("MansDay")))) {
+        if (((holiday.getKey().equals("WomanDay")) || (holiday.getKey().equals("NewYear")) || (holiday.getKey().equals("MansDay")))) {
             radioButtonForHer.setEnabled(false);
             radioButtonForHim.setEnabled(false);
         }
@@ -93,11 +94,11 @@ public class TextActivity extends AppCompatActivity {
                         break;
                 }
                 textCongratulate.setText(getRndTextCongratulate());
-                progressBar.setMax(holiday.congratulates.length);
+                progressBar.setMax(holiday.getCongratulates().length);
                 progressBar.setProgress(currentCongratulateTextPosition);
             }
         });
-        progressBar.setMax(holiday.congratulates.length);
+        progressBar.setMax(holiday.getCongratulates().length);
         progressBar.setProgress(currentCongratulateTextPosition);
     }
 
@@ -113,7 +114,7 @@ public class TextActivity extends AppCompatActivity {
         }
 
         userCursor = sqlHelper.database.rawQuery("select * from " + DatabaseHelper.TABLE + " where " +
-                DatabaseHelper.HOLIDAY + "=? AND " + DatabaseHelper.SEX + "=?", new String[]{holiday.getHolidayName(), String.valueOf(filter)});
+                DatabaseHelper.HOLIDAY + "=? AND " + DatabaseHelper.SEX + "=?", new String[]{holiday.getKey(), String.valueOf(filter)});
 
         while (userCursor.moveToNext()) {
             String note = userCursor.getString(1);
@@ -121,6 +122,8 @@ public class TextActivity extends AppCompatActivity {
         }
         String[] myArray = myArrayList.toArray(new String[myArrayList.size()]);
         userCursor.close();
+        sqlHelper.database.close();
+        sqlHelper.close();
         return myArray;
 
     }
@@ -134,7 +137,7 @@ public class TextActivity extends AppCompatActivity {
     }
 
     private String getNextTextCongratulate() {
-        return holiday.congratulates[getNextPosition()];
+        return holiday.getCongratulates()[getNextPosition()];
     }
 
     private String getPrevTextCongratulate() {

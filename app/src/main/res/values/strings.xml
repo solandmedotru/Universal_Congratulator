@@ -45,4 +45,5 @@
         <item quantity="other">%d days</item>
     </plurals>
     <string name="event_description_text">Event added from app: </string>
+    <string name="txt_holiday_name">Holiday name</string>
 </resources>
