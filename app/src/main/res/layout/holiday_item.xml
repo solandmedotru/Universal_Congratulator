@@ -53,7 +53,7 @@
                     android:text="@string/txt_holiday_description"
                     android:textSize="@dimen/txtSize"
                     android:textStyle="normal"
-                    android:textColor="@color/colorBlack"/>
+/>
 
                 <TextView
                     android:id="@+id/textDays"

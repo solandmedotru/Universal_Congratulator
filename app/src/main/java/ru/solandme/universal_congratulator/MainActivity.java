@@ -88,9 +88,9 @@ public class MainActivity extends AppCompatActivity {
                 drawerLayout.closeDrawers();
 
                 switch (item.getItemId()) {
-                    case R.id.actionNotificationItem:
-                        showNotificationTab();
-                        break;
+//                    case R.id.actionNotificationItem:
+//                        showNotificationTab();
+//                        break;
                     case R.id.actionAboutApp:
                         //TODO добавить описание  приложения
                         String version = null;

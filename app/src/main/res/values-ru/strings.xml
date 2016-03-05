@@ -37,10 +37,10 @@
         Пусть обходят все ненастья,\n
         Жизнь одарит вас сполна!\n</string>
     <plurals name="days">
-        <item quantity="one">%d день</item>
-        <item quantity="few">%d дня</item>
-        <item quantity="many">%d дней</item>
-        <item quantity="other">%d дней</item>
+        <item quantity="one">еще %d день</item>
+        <item quantity="few">еще %d дня</item>
+        <item quantity="many">еще %d дней</item>
+        <item quantity="other">еще %d дней</item>
     </plurals>
 
     <string name="textTomorrow">завтра</string>
