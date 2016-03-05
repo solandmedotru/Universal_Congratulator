@@ -46,4 +46,11 @@
     </plurals>
     <string name="event_description_text">Event added from app: </string>
     <string name="txt_holiday_name">Holiday name</string>
+    <string name="search">Search</string>
+    <string name="menu_item_notification">Notification</string>
+    <string name="view_navigation_open">Open</string>
+    <string name="view_navigation_close">Close</string>
+    <string name="tab_item_notifications">Notifications</string>
+    <string name="tab_item_holidays">Holidays</string>
+    <string name="tab_item_birthdays">Birthdays</string>
 </resources>

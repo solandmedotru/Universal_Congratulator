@@ -47,4 +47,11 @@
     <string name="event_description_text">Событие добавлено из приложения </string>
     <string name="my_new_holiday">Мой новый праздник</string>
     <string name="txt_holiday_name">Название праздника</string>
+    <string name="menu_item_notification">Напоминания</string>
+    <string name="search">Поиск</string>
+    <string name="view_navigation_close">Закрыть</string>
+    <string name="view_navigation_open">Открыть</string>
+    <string name="tab_item_birthdays">Дни рождения</string>
+    <string name="tab_item_holidays">Праздники</string>
+    <string name="tab_item_notifications">Напоминания</string>
 </resources>

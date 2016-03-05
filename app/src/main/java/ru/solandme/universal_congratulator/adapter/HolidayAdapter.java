@@ -42,7 +42,7 @@ public class HolidayAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         View view =convertView;
         if(view == null){
-            view = layoutInflater.inflate(R.layout.holiday_item_layout, parent, false);
+            view = layoutInflater.inflate(R.layout.holiday_item, parent, false);
         }
 
         Holiday holiday = getHoliday(position);
