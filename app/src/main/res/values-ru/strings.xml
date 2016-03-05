@@ -54,4 +54,5 @@
     <string name="tab_item_birthdays">Дни рождения</string>
     <string name="tab_item_holidays">Праздники</string>
     <string name="tab_item_notifications">Напоминания</string>
+    <string name="txt_holiday_description">Описание праздника</string>
 </resources>

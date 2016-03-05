@@ -11,7 +11,7 @@ public class DatabaseHelper extends SQLiteAssetHelper {
 
     private static String DB_PATH = "";
     private static String DB_NAME = "Holidays.db";
-    private static final int SCHEMA = 4; // версия базы данных
+    private static final int SCHEMA = 5; // версия базы данных
     static final String TABLE = "congratulate";
 
     public static final String ID = "_id";
