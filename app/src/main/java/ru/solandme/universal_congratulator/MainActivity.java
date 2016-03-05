@@ -148,6 +148,7 @@ public class MainActivity extends AppCompatActivity {
 
         holidayRV = (RecyclerView) findViewById(R.id.holidayRecycleView);
 
+
 //        holidayListView = (ListView) findViewById(R.id.holidayListView);
 //
 //        HolidayAdapter adapter = new HolidayAdapter(this, holidayList);

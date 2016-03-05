@@ -17,7 +17,6 @@ import java.util.List;
 import ru.solandme.universal_congratulator.R;
 import ru.solandme.universal_congratulator.adapter.HolidayListAdapter;
 import ru.solandme.universal_congratulator.dto.HolidayDTO;
-import ru.solandme.universal_congratulator.dto.RemindDTO;
 
 public class HolidaysFragment extends AbstractTabFragment {
 
@@ -52,11 +51,10 @@ public class HolidaysFragment extends AbstractTabFragment {
         List<HolidayDTO> data = new ArrayList<>();
 
 
-        data.add(new HolidayDTO("Birthday", "День рождения", R.drawable.ic_birthday, 0, "День рождения"));
-        data.add(new HolidayDTO("NewYear", "Новый Год", R.drawable.ic_december, 0, "Новый Год", 31, 12, getDays(31, 12)));
-        data.add(new HolidayDTO("Valentine", "День святого валентина", R.drawable.ic_february, 0, "День святого валентина", 14, 2, getDays(14, 2)));
-        data.add(new HolidayDTO("WomanDay", "Международный женский день", R.drawable.ic_8march, 0, "Международный женский день", 8, 3, getDays(8, 3)));
-        data.add(new HolidayDTO("MansDay", "День защитника отечества", R.drawable.ic_23february, 0, "День защитника отечества", 23, 2, getDays(23, 2)));
+        data.add(new HolidayDTO("NewYear", "Новый Год", R.drawable.ic_december, 0, "Праздник, знаменующий начало года", 31, 12, getDays(31, 12)));
+        data.add(new HolidayDTO("Valentine", "День св. Валентина", R.drawable.ic_february, 0, "Праздник всех влюбленных", 14, 2, getDays(14, 2)));
+        data.add(new HolidayDTO("WomanDay", "8 марта", R.drawable.ic_8march, 0, "Международный женский день", 8, 3, getDays(8, 3)));
+        data.add(new HolidayDTO("MansDay", "23 февраля", R.drawable.ic_23february, 0, "День защитника отечества", 23, 2, getDays(23, 2)));
 
 
         return data;

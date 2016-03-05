@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card="http://schemas.android.com/apk/res-auto"
     android:id="@+id/holiday_item"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    android:layout_marginLeft="6dp"
+    android:layout_marginRight="6dp">
 
     <android.support.v7.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        card:cardElevation="2dp"
+        card:cardUseCompatPadding="true">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -17,14 +24,15 @@
 
             <ImageView
                 android:id="@+id/imageHoliday"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:scaleType="fitCenter"
-                android:layout_margin="6dp"/>
+                android:layout_margin="6dp"
+                android:layout_gravity="center"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:gravity="start|center"
                 android:orientation="vertical">
 
@@ -33,6 +41,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/txt_holiday_name"
+                    android:textSize="@dimen/txtSizeHeader"
+                    android:textStyle="normal"
+                    android:gravity="center"
+                    android:textColor="@color/colorBlack"/>
+
+                <TextView
+                    android:id="@+id/textHolidayDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_holiday_description"
                     android:textSize="@dimen/txtSize"
                     android:textStyle="normal"
                     android:textColor="@color/colorBlack"/>

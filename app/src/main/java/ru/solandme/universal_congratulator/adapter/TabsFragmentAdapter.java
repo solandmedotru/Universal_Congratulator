@@ -11,7 +11,6 @@ import java.util.Map;
 import ru.solandme.universal_congratulator.fragment.AbstractTabFragment;
 import ru.solandme.universal_congratulator.fragment.BirthdaysFragment;
 import ru.solandme.universal_congratulator.fragment.HolidaysFragment;
-import ru.solandme.universal_congratulator.fragment.NotificationFragment;
 
 public class TabsFragmentAdapter extends FragmentPagerAdapter {
 
@@ -43,8 +42,8 @@ public class TabsFragmentAdapter extends FragmentPagerAdapter {
 
     private void initTabsMap(Context context) {
         tabs = new HashMap<>();
-        tabs.put(0, NotificationFragment.getInstance(context));
-        tabs.put(1, HolidaysFragment.getInstance(context));
-        tabs.put(2, BirthdaysFragment.getInstance(context));
+        //tabs.put(0, NotificationFragment.getInstance(context));
+        tabs.put(0, HolidaysFragment.getInstance(context));
+        tabs.put(1, BirthdaysFragment.getInstance(context));
     }
 }
