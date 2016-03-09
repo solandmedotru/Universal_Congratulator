@@ -93,12 +93,7 @@ public class MainActivity extends AppCompatActivity {
 //                        break;
                     case R.id.actionAboutApp:
                         //TODO добавить описание  приложения
-                        String version = null;
-                        try {
-                            version = getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
-                        } catch (PackageManager.NameNotFoundException e) {
-                            e.printStackTrace();
-                        }
+                        String version = BuildConfig.VERSION_NAME;
                         Snackbar.make(findViewById(R.id.coordinatorLayout), "App version - " + version, Snackbar.LENGTH_LONG).show();
                 }
 
