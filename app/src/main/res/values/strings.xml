@@ -55,5 +55,5 @@
     <string name="tab_item_holidays">Holidays</string>
     <string name="tab_item_birthdays">Birthdays</string>
     <string name="txt_holiday_description">Holiday description</string>
-    <string name="chooserText">Send...</string>
+    <string name="chooserText">Send via ...</string>
 </resources>
