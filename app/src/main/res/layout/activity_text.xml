@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     android:padding="6dp"
     tools:context="ru.solandme.universal_congratulator.TextActivity">
 
@@ -34,6 +35,7 @@
             android:checked="true"
             android:text="@string/universal" />
     </RadioGroup>
+
 
     <ScrollView
         android:id="@+id/scrollView2"
@@ -121,5 +123,6 @@
             android:textColor="@android:color/white"
             android:textSize="12sp" />
     </LinearLayout>
+
 
 </RelativeLayout>

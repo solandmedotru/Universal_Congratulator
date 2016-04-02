@@ -34,9 +34,8 @@ public class HolidaysFragment extends AbstractTabFragment {
         return fragment;
     }
 
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(LAYOUT, container, false);
 
         RecyclerView rv = (RecyclerView) view.findViewById(R.id.holidayRecycleView);

@@ -11,6 +11,9 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -23,10 +26,13 @@ public class TextActivity extends AppCompatActivity {
     int currentCongratulateTextPosition;
     Holiday holiday;
     int lastId;
+    String message;
 
     DatabaseHelper sqlHelper;
     Cursor userCursor;
     ProgressBar progressBar;
+
+    InterstitialAd mInterstitialAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +44,34 @@ public class TextActivity extends AppCompatActivity {
         sqlHelper.setForcedUpgrade();
         sqlHelper.getReadableDatabase();
         initViews();
+
+        initAdInterstitial();
+
     }
+
+    private void initAdInterstitial() {
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-8994936165518589/2527362551");
+
+        mInterstitialAd.setAdListener(new AdListener() {
+            @Override
+            public void onAdClosed() {
+                requestNewInterstitial();
+                sendMessage(message);
+            }
+        });
+
+        requestNewInterstitial();
+    }
+
+    private void requestNewInterstitial() {
+        AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                .build();
+
+        mInterstitialAd.loadAd(adRequest);
+    }
+
 
     @Override
     protected void onResume() {
@@ -189,8 +222,13 @@ public class TextActivity extends AppCompatActivity {
                 progressBar.setProgress(currentCongratulateTextPosition);
                 break;
             case R.id.btnSend:
-                String message = textCongratulate.getText().toString();
-                sendMessage(message);
+                message = textCongratulate.getText().toString();
+
+                if (mInterstitialAd.isLoaded()) {
+                    mInterstitialAd.show();
+                } else {
+                    sendMessage(message);
+                }
                 break;
         }
     }
